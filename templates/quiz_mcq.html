@@ -1,7 +1,8 @@
 {% extends "quiz_template.html" %}
 
 {% block quizcontent %}
-
-<!-- Add content -->
-
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_mcq.js') }}"></script>
+    
+    <div id="mcq_choices"></div>
+    
 {% endblock %}
