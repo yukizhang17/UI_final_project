@@ -16,6 +16,21 @@ quiz_data = {
             "3": "Color is a good indicator of the age of a wine."
         }
     },
+    "4": {
+        "id": "4",
+        "type": "mcq_with_side_image",
+        "previous": "3",
+        "next": "5",
+        "learn": "5",
+        "question": "What are the drops of wine falling down called?",
+        "answer": "1",
+        "choices":{
+            "1": "Legs",
+            "2": "Branches",
+            "3": "Strands"
+        },
+        "image": "https://cdn.mos.cms.futurecdn.net/n3n8gJFNes6MQ3gHArXC6X.jpg"
+    },
     "7": {
         "id": "7",
         "type": "mcq",
