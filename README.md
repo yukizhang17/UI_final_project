@@ -12,7 +12,7 @@ We follow a two-column structure for displaying most pages on the website. The f
 
 1. `.section-wrapper`: This is the wrapper class for any webpage (like the .container class in Boostrap). This divides the webpage into multiple columns using flexbox.
 2. `.section`: This is the class for an individual section. It may contain either text or an image. We encourage the use of another class on the element which has this class:
-   1. .section-left: Adds some `padding-left` to this section.
+   1. `.section-left`: Adds some `padding-left` to this section.
    2. `.section-right`: Adds some `padding-right` to this section.
 3. .section-image: This class should be applied to any image added in `.section`. This class makes sure that the image resizes to fit into the section properly and not overflow.
 
@@ -21,7 +21,7 @@ We follow a two-column structure for displaying most pages on the website. The f
 We also built a custom navbar as per our needs. It uses the following classes and elements:
 
 1. `header`: This is the parent element of the navbar. It contains the `nav` element as well as the `.nav-collapse` element.
-2. nav: This is the lifeline of the navbar. It houses the title of the website as well as the actions (`.actions`). It behaves differently according to the screen size. In laptop screens it has the following code:
+2. `nav`: This is the lifeline of the navbar. It houses the title of the website as well as the actions (`.actions`). It behaves differently according to the screen size. In laptop screens it has the following code:
 
    ```
    nav {
