@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+body {
+  background-color: #f9f5f1;
+  overflow: hidden;
+}
+
+.custom-btn {
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  text-align: center;
+  font-family: "Playfair Display", sans-serif;
+}
+
+.custom-btn.btn-type-1 {
+  padding: 0.7rem 1rem;
+  border: 2px solid #000;
+  font-size: 1.3rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.custom-btn.btn-type-1:hover {
+  outline: none;
+  transition: 0.4s ease;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.custom-btn.btn-type-1:active, .custom-btn.btn-type-1:focus {
+  outline: none;
+  border: 2px solid #000;
+  text-decoration: none;
+}
+
+/* Basic Sectioning of the website */
+.section-wrapper {
+  display: flex;
+  height: calc(100vh - 14rem);
+  font-family: "Playfair Display", sans-serif;
+  font-weight: 400;
+}
+.section-wrapper .section {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section-wrapper .section.section-left {
+  padding-left: 5rem;
+  padding-right: 2rem;
+}
+
+.section-wrapper .section.section-right {
+  padding-right: 5rem;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.section-wrapper .section .section-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 90%;
+  object-fit: cover;
+}
+
+.section-wrapper .section > * {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow: initial;
+  }
+}

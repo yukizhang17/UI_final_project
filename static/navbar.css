@@ -1,0 +1,91 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  padding-bottom: 1rem;
+}
+
+nav h1 {
+  font-family: "Playfair Display", sans-serif;
+  font-weight: 900;
+}
+
+.navbar-divider {
+  margin: 0;
+  padding: 0;
+  height: 0.5px;
+  background-color: #000;
+}
+
+.nav-collapse {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 1.3rem 1rem;
+    padding-bottom: 0.5rem;
+  }
+  .actions {
+    display: none;
+  }
+  nav h1 {
+    font-size: 3rem;
+  }
+  .nav-collapse {
+    display: initial;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 1rem;
+    top: calc(1.3rem + 15px);
+    z-index: 101;
+  }
+  .nav-collapse span {
+    height: 2px;
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+  }
+  .nav-collapse span::before, .nav-collapse span::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    background-color: #000;
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .nav-collapse span::before {
+    top: -7px;
+  }
+  .nav-collapse span::after {
+    bottom: -7px;
+  }
+  .nav-collapse.nav-open span::before {
+    top: 0;
+  }
+  .nav-collapse.nav-open span::after {
+    bottom: 0;
+  }
+  nav.nav-open {
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: #f9f5f1;
+    flex-direction: column;
+    justify-content: center;
+  }
+  nav.nav-open h1 {
+    margin-bottom: 2rem;;
+  }
+  nav.nav-open .actions {
+    display: initial;
+    display: flex;
+    flex-direction: column;
+  }
+  nav.nav-open .actions > * {
+    margin-bottom: 1rem;
+  }
+}

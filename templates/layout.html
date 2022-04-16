@@ -15,15 +15,14 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
 
+        <link rel="stylesheet" href="{{url_for('static', filename='navbar.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='outline.css')}}">
         <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 
         <title>Wine.ly</title>
     </head>
     <body>
-        
-
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">Wine.ly</a>
                 <a class="nav-link go gray" href="/">Teach me</a>
@@ -36,13 +35,29 @@
                 </div>
                 </div>
             </div>
-        </nav>
-
-        <div class="container pageBottom">   
+        </nav> -->
+        <header>
+            <nav>
+                <h1>Wine.ly</h1>
+                <div class="actions">
+                    <a href="" class="custom-btn btn-type-1 mx-2">
+                        Teach Me
+                    </a>
+                    <a href="" class="custom-btn btn-type-1 mx-2">
+                        Test Me
+                    </a>
+                </div>
+            </nav>
+            <a class="nav-collapse">
+                <span></span>
+            </a>
+        </header>
+        <hr class="navbar-divider">
+        <div>   
             {% block content %}
             {% endblock %}
         </div>
-
+        <script src="{{url_for('static', filename='navbar.js')}}"></script>
     </body>
 </html>
 

@@ -1,3 +1,13 @@
+/* Home Page */
+#home .home-title {
+    font-weight: 900;
+    font-size: 5rem;
+}
+
+#home p {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
 
 /* Quiz */
 #question {
