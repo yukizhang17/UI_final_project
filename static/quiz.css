@@ -4,17 +4,27 @@
 body {
     font-family: "Playfair Display", sans-serif;
 }
+/* Quiz template */
 #question {
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: 1.3rem;
 }
+#quizactions {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+/* Quiz type: mcq */
 .mcq_choice_label {
     margin-left: 20px;
 }
 .mcq_choice {
     margin-bottom: 8px;
 }
+/* Quiz type: mcq with side image */
 #mcq_side_image {
     margin-bottom: 10px;
 }
