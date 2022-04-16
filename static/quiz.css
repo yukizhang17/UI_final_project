@@ -1,0 +1,20 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap'); */
+
+/* Quiz */
+body {
+    font-family: "Playfair Display", sans-serif;
+}
+#question {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.3rem;
+}
+.mcq_choice_label {
+    margin-left: 20px;
+}
+.mcq_choice {
+    margin-bottom: 8px;
+}
+#mcq_side_image {
+    margin-bottom: 10px;
+}
