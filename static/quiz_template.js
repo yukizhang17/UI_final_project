@@ -1,3 +1,5 @@
+// TODO: Add a way to check progress (e.g. currently at 3rd question out of 7 ..)
+
 function onSubmit() {
     // Add Previous / Next / Learn buttons once submit is clicked.
     // This function should be called in submit() function for individual question types
@@ -6,7 +8,16 @@ function onSubmit() {
 }
 
 function setClickActions() {
-    // TODO: Set click actions for action buttons (prev / next / learn)
+    // TODO: Confirm "Learn" button works as expected.
+    $("#previous").click(function(e){
+        window.location.replace("/quiz/" + item["previous"])
+    })
+    $("#next").click(function(e){
+        window.location.replace("/quiz/" + item["next"])
+    })
+    $("#learn").click(function(e){
+        window.location.replace("/learn/" + item["learn"])
+    })
 }
 
 function showActionButtons() {
