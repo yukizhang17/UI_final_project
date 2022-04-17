@@ -56,22 +56,28 @@ def check_answer():
     quiz_id = json_data["id"]
     quiz_type = quiz_data[quiz_id]["type"]
     user_answer = json_data["user_answer"]
-    
+
     if (quiz_type == "mcq" or quiz_type == "mcq_with_side_image"):
       answer = quiz_data[quiz_id]["answer"]
       isCorrect = (user_answer == answer)
-      
+      isCorrectAll = isCorrect
+    elif quiz_type == "match":
+      answer = quiz_data[quiz_id]["answer"]
+      isCorrect = {}
+      for k in answer.keys():
+        if answer[k] != user_answer[k]:
+          isCorrect[k] = False
+        else:
+          isCorrect[k] = True
+      isCorrectAll = all(c for c in isCorrect.values())
     # Add question types for different types of checking the answer.
-    # Always have the fields [isCorrect], [answer], [user_answer]
+    # Always have the fields [isCorrect], [answer], [user_answer] for response.
+    # Compute isCorrectAll to record if the user got whole part of that question right.
 
     # Store the result for each question.
-    quiz_result[quiz_id] = isCorrect
+    quiz_result[quiz_id] = isCorrectAll
     return jsonify(correct = isCorrect, answer = answer, user_answer = user_answer)
 
 
 if __name__ == '__main__':
    app.run(debug = True)
-
-
-
-
