@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_start.js') }}"></script> -->
+    <script>
+        let total_quiz_num = {{total_quiz_num}}
+        let total_correct_num = {{total_correct_num}}
+    </script>
+    <!-- Quiz Start page with Start button -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 center_item quiz_start_stat">
+                <h2>Congratulations!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 center_item quiz_start_stat">
+                <div>You scored: {{total_correct_num}} out of {{total_quiz_num}}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 center_item quiz_start_stat">
+                <a href="/learn" class="custom-btn btn-type-1 mx-2 center_item">Learn Again</a>
+            </div>
+            <div class="col-6 center_item quiz_start_stat">
+                <a href="/quiz/start" class="custom-btn btn-type-1 mx-2 center_item">Quiz Me Again</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
