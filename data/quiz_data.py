@@ -31,6 +31,25 @@ quiz_data = {
         },
         "image": "https://cdn.mos.cms.futurecdn.net/n3n8gJFNes6MQ3gHArXC6X.jpg"
     },
+    "6": {
+        "id": "6",
+        "type": "match",
+        "previous": "5", 
+        "next": "7",
+        "learn": "",
+        "question": "Match food and type of wine that goes well together.",
+        "choices_left": {
+            "1": "Meat",
+            "2": "Pasta",
+            "3": "Vegetarian"
+        },
+        "choices_right": {
+            "1": "Cabernet Sauvignon (Red)",
+            "2": "Sauvignon Blanc (White)",
+            "3": "Zinfandel (Red)"
+        },
+        "answer": {"1": "1", "2": "3", "3": "2"}
+    },
     "7": {
         "id": "7",
         "type": "mcq",

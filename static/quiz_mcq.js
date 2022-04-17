@@ -22,14 +22,6 @@ function initialize_choices(choices) {
     })
 }
 
-function isCorrect(user_answer, answer) {
-    if (answer == user_answer) {
-        console.log("correct")
-        return true;
-    }
-    return false;
-}
-
 function showFeedback(user_answer, answer, correct) {
     if (correct) {
         let choice_id = "#choice" + user_answer

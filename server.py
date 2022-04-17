@@ -31,6 +31,8 @@ def quiz(id='1'):
       return render_template('quiz_mcq.html', item=quiz_data[id])
     elif quiz_data[id]['type'] == 'mcq_with_side_image':
       return render_template('quiz_mcq_with_side_image.html', item=quiz_data[id])
+    elif quiz_data[id]['type'] == 'match':
+      return render_template('quiz_match.html', item=quiz_data[id])
 
 # Quiz complete page with score
 @app.route('/finish')
