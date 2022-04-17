@@ -91,12 +91,26 @@ def check_answer():
       else:
         isCorrect[k] = True
     isCorrectAll = all(c for c in isCorrect.values())
+  
+  elif quiz_type == "drag":
+    answer = quiz_data[quiz_id]["answer"]
+    isCorrect = {}
+    for k in user_answer.keys():
+      if k not in answer:
+        isCorrect[k] = False
+        continue
+      if answer[k] != user_answer[k]:
+        isCorrect[k] = False
+      else:
+        isCorrect[k] = True
+    isCorrectAll = all(c for c in isCorrect.values())
   # Add question types for different types of checking the answer.
   # Always have the fields [isCorrect], [answer], [user_answer] for response.
   # Compute isCorrectAll to record if the user got whole part of that question right.
 
   # Store the result for each question.
   quiz_result[quiz_id] = isCorrectAll
+  print(isCorrect)
   return jsonify(correct = isCorrect, answer = answer, user_answer = user_answer)
 
 

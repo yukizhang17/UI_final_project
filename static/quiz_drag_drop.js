@@ -5,7 +5,6 @@ function initialize_choices(choices) {
     $.each(Object.keys(choices), function(index, choice_idx){
         init_choices.push(choice_idx)
     })
-    console.log(init_choices)
 }
 
 function make_choices(choices) {
@@ -38,9 +37,23 @@ function init_user_answer(choices) {
     $.each(user_choice, function(index, choice_idx){
         let div = $("<div>")
         div.addClass('dropped_items')
+        div.prop({
+            id: "choice_" + (index+1).toString()
+        })
         let choice = choices[choice_idx]
         div.text(choice)
         $("#drop_box").append(div)
+    })
+}
+
+function showFeedback(user_answer, correct) {
+    console.log(correct)
+    $.each(Object.keys(correct), function(index, choice_idx){
+        let feedback = "correct"
+        if (!correct[choice_idx]) {
+            feedback = "incorrect"
+        }
+        $("#choice_" + (index+1).toString()).addClass(feedback)
     })
 }
 
@@ -54,22 +67,20 @@ function submit(choices) {
         user_answer[(index+1).toString()] = choice_idx
     })
 
+    data  = {"id": item['id'], "user_answer": user_answer}
+    console.log(user_answer)
     $.ajax({
         type: "POST",
         url: "/check",                
         dataType : "json",
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(user_answer),
+        data: JSON.stringify(data),
         success: function(result){
             let correct = result["correct"]
             let answer = result["answer"]
             let user_answer = result["user_answer"]
-            // User answer should not be modifiable at this point. 
-            lockRadioButtons()
-            // Disable hover effect to indicate that it's not clickable anymore.
-            
             // Show feedback for correct / incorrect answer.
-            showFeedback(user_answer, answer, correct)
+            showFeedback(user_answer, correct)
         },
         error: function(request, status, error){
             console.log("Error");
@@ -116,7 +127,8 @@ $(document).ready(function(){
 
     $("#submit").click(function(e){
         e.preventDefault();
-        
+        $('.ui-draggable').draggable({ disabled: true })
+        $('#revert').hide()
         let result = submit(item["choices"]);
         if (result) {
             // onSubmit() function defined in quiz_template.js 
