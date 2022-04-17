@@ -1,4 +1,8 @@
 /* Home Page */
+html {
+    overflow: scroll;
+}
+
 #home .home-title {
     font-weight: 900;
     font-size: 5rem;
@@ -7,4 +11,8 @@
 #home p {
     font-size: 1.4rem;
     font-weight: 400;
+}
+
+.image_button {
+    text-align: center;
 }
