@@ -1,0 +1,12 @@
+{% extends "quiz_template.html" %}
+
+{% block quizcontent %}
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_match.js') }}"></script>
+    
+    <div class="row">
+        <div class="col-md-5" id="choices_left"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5" id="choices_right"></div>
+    </div>
+
+{% endblock %}

@@ -1,7 +1,19 @@
 # Quiz data in the format of 
 # {page_num: { contents for quiz including question / answer / relevant tutorial page .. }}
 quiz_data = {
-    "1": {"type": "image_mcq"},
+    "1": {
+        "id": "1",
+        "type": "image_mcq",
+        "previous": "none",
+        "next": "2",
+        "learn": "10",
+        "question": "Which of these is the correct way to hold a wine glass?",
+        "answer": "1",
+        "choices":{
+            "1": "/static/img/quiz_img/quiz1_1.jpg",
+            "2": "/static/img/quiz_img/quiz1_2.webp"
+        }
+    },
     "3": {
         "id": "3",
         "type": "mcq",
@@ -31,11 +43,43 @@ quiz_data = {
         },
         "image": "https://cdn.mos.cms.futurecdn.net/n3n8gJFNes6MQ3gHArXC6X.jpg"
     },
+    "5": {
+        "id": "5",
+        "type": "image_mcq",
+        "previous": "4",
+        "next": "6",
+        "learn": "10",
+        "question": "Which one of these wines is younger?",
+        "answer": "2",
+        "choices":{
+            "1": "/static/img/quiz_img/quiz5_1.png",
+            "2": "/static/img/quiz_img/quiz5_2.png"
+        }
+    },
+    "6": {
+        "id": "6",
+        "type": "match",
+        "previous": "5", 
+        "next": "7",
+        "learn": "",
+        "question": "Match food and type of wine that goes well together.",
+        "choices_left": {
+            "1": "Meat",
+            "2": "Pasta",
+            "3": "Vegetarian"
+        },
+        "choices_right": {
+            "1": "Cabernet Sauvignon (Red)",
+            "2": "Sauvignon Blanc (White)",
+            "3": "Zinfandel (Red)"
+        },
+        "answer": {"1": "1", "2": "3", "3": "2"}
+    },
     "7": {
         "id": "7",
         "type": "mcq",
         "previous": "6",
-        "next": "none",
+        "next": "finish",
         "learn": "13",
         "question": "Which one of the following wine is the most popular red wine?",
         "answer": "1",

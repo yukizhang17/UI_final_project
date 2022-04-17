@@ -1,0 +1,72 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap'); */
+
+/* Quiz */
+body {
+    font-family: "Playfair Display", sans-serif;
+}
+/* Quiz template */
+#question {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.3rem;
+}
+#quizactions {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+/* General */
+.correct {
+    background-color: green;
+}
+.incorrect {
+    background-color: red;
+}
+/* Quiz type: mcq */
+.mcq_choice_label {
+    margin-left: 20px;
+}
+.mcq_choice {
+    margin-bottom: 8px;
+}
+/* Quiz type: mcq with side image */
+#mcq_side_image {
+    margin-bottom: 10px;
+}
+/* Quiz type: match */
+.match_choice_label {
+    text-align: center;
+    padding: 0.7rem 1rem;
+    border: 1px solid #000;
+    color: #000;
+    text-decoration: none;
+    width:200px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    user-select: none;
+}
+.match_choice_dot {
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 15px;
+    width: 15px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.match_choice_dot_hover:hover {
+    outline: none;
+    transition: 0.2s ease;
+    background-color: gray;
+    cursor: pointer;
+}
+.match_canvas {
+    display: block;
+    position: fixed;
+  }

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="sections-wrapper" id="sections-page">
+  <div class="wrapper">
+    <div class="row">
+      <div class="section">
+        <h2>You've successfully completed learning the basics of wine tasting!</h2>
+        <a href="{{item.previous}}" class="custom-btn btn-type-1 px-4 mx-3">Go Back to Learning</a>
+        <a href="{{item.next}}" class="custom-btn btn-type-1 px-4">Test Yourself</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

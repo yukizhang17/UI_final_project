@@ -1,18 +1,21 @@
 {% extends "layout.html" %}
 
 {% block content %}
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_template.js') }}"></script>
     <script>
         let item = {{item|tojson}}
     </script>
 
     <!-- Quiz template, which contains question, quiz progress, buttons to go to previous/next questions, and button to review -->
     <div class="container">
-        <div id="question">
+        <div id="question" class="section">
             Q{{item.id}}. {{item.question}}
         </div>
         
         {% block quizcontent %}
         {% endblock %}
+        
+        <div id="quizactions" class="section"></div>
     </div>
 
 {% endblock %}

@@ -1,0 +1,23 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Should be made dynamic -->
+<div class="section-home-page">
+  <h1 class="text-center pt-4">{{item.section_name}}</h1>
+  <div class="row w-100 text-center section-home-row">
+    {% for i, page in item.pages.items() %}
+      {% if page.type != 'summary' and page.type != 'end' %}
+        <div class="page-card" onclick="window.location.href='{{page.page_link}}'">
+          <img class="section-home-image" src="{{page.image}}" alt="Holding a Wine Glass">
+          <h2>{{page.heading}}</h2>
+        </div>
+      {% endif %}
+    {% endfor %}
+    <a href="{{item.pages["1"].page_link}}" class="custom-btn btn-type-1 cta-button center-abs">
+      Learn from the Start
+    </a>
+  </div>
+</div>
+
+{% endblock %}

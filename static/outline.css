@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 body {
   background-color: #f9f5f1;
-  overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -38,6 +42,35 @@ h1, h2, h3, h4, h5, h6, p {
 .custom-btn.btn-type-1:active, .custom-btn.btn-type-1:focus {
   outline: none;
   border: 2px solid #000;
+  text-decoration: none;
+}
+
+/* For Buttons at the bottom of the page e.g. Next / Previous */
+.custom-btn.btn-type-2 {
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border: 1px solid #000;
+  /* font-size: 1rem; */
+  color: #000;
+  text-decoration: none;
+  width:fit-content;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.custom-btn.btn-type-2:hover {
+  outline: none;
+  transition: 0.4s ease;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.custom-btn.btn-type-2:active, .custom-btn.btn-type-2:focus {
+  outline: none;
+  border: 1px solid #000;
   text-decoration: none;
 }
 
@@ -82,10 +115,4 @@ h1, h2, h3, h4, h5, h6, p {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    overflow: initial;
-  }
 }
