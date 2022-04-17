@@ -67,7 +67,7 @@ def finish():
   
   print(total_quiz_num, total_correct_num)
   
-  return render_template('complete.html', total_quiz_num, total_correct_num)
+  return render_template('quiz_end.html', total_quiz_num=str(total_quiz_num), total_correct_num=str(total_correct_num))
 
 # ajax calls
 # Check answer of the quiz and save the score for each question.
