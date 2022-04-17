@@ -14,6 +14,22 @@ quiz_data = {
             "2": "/static/img/quiz_img/quiz1_2.webp"
         }
     },
+    "2": {
+        "id": "2",
+        "type": "drag",
+        "previous": "1",
+        "next": "3",
+        "learn": "10",
+        "question": "Please drag and drop to the left the correct sequence to sip wine.",
+        "answer": {"1": "2", "2": "5", "3": "1"},
+        "choices":{
+            "1": "Sip the Wine",
+            "2": "Hold the glass correctly from the stem",
+            "3": "Down the whole glass",
+            "4": "Drink from the bottle",
+            "5": "Sniff"
+        }
+    },
     "3": {
         "id": "3",
         "type": "mcq",

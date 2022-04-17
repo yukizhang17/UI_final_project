@@ -38,6 +38,8 @@ def quiz(id='1'):
     return render_template('quiz_mcq_with_side_image.html', item=quiz_data[id])
   elif quiz_data[id]['type'] == 'match':
     return render_template('quiz_match.html', item=quiz_data[id])
+  elif quiz_data[id]['type'] == 'drag':
+    return render_template('quiz_drag_drop.html', item=quiz_data[id])
 
 # Quiz complete page with score
 @app.route('/finish')
@@ -62,7 +64,7 @@ def check_answer():
   quiz_type = quiz_data[quiz_id]["type"]
   user_answer = json_data["user_answer"]
 
-  if (quiz_type == "mcq" or quiz_type == "mcq_with_side_image"):
+  if (quiz_type == "mcq" or quiz_type == "mcq_with_side_image" or quiz_type == "image_mcq"):
     answer = quiz_data[quiz_id]["answer"]
     isCorrect = (user_answer == answer)
     isCorrectAll = isCorrect
