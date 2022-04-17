@@ -39,7 +39,7 @@ function initialize_choices_with_img(choices) {
         choice_img.attr('src', choice)
         choice_img.width('50%')
         choice_img.height("auto")
-        let button = $("<input type='radio' name='choice' class='image_button'></div>")
+        let button = $("<input type='radio' name='choice' class='center_item'></div>")
         button.prop({
             id: choice_idx,
             value: choice_idx

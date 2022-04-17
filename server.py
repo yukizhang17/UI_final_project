@@ -71,7 +71,7 @@ def finish():
 
 # ajax calls
 # Check answer of the quiz and save the score for each question.
-@app.route('/check', methods=['GET', 'POST'])
+@app.route('/check', methods=['POST'])
 def check_answer():
   json_data = request.get_json()   
   quiz_id = json_data["id"]
