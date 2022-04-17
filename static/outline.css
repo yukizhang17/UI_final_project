@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 body {
   background-color: #f9f5f1;
-  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "Playfair Display", sans-serif;
 }
 
 .custom-btn {
@@ -103,8 +111,8 @@ body {
   margin-top: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    overflow: initial;
-  }
+.center-abs {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }

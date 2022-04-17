@@ -1,0 +1,29 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container text-center tutorial-page-one-column">
+  <h2>{{item.heading}} - {{item.subtitle}}</h2>
+  {% for i in item.text %}
+    <p>{{i}}</p>
+  {% endfor %}
+  <div class="images">
+    {% for i in item.images %}
+      <div class="image">
+        <img class="section-image" src="{{i.url}}" alt="{{i.alt}}">
+        <h3 class="pt-3 font-weight-light">{{i.caption}}</h3>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="cta-buttons center-abs">
+    <a href="{{item.previous}}" class="custom-btn btn-type-1 px-4">
+      <
+    </a>
+    <a href="{{item.next}}" class="custom-btn btn-type-1 px-4">
+      >
+    </a>
+  </div>
+</div>
+
+{% endblock %}

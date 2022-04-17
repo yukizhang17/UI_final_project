@@ -9,6 +9,7 @@ nav {
 nav h1 {
   font-family: "Playfair Display", sans-serif;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .navbar-divider {

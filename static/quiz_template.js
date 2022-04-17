@@ -13,7 +13,11 @@ function setClickActions() {
         window.location.replace("/quiz/" + item["previous"])
     })
     $("#next").click(function(e){
-        window.location.replace("/quiz/" + item["next"])
+        if (item["next"] == "finish") {
+            window.location.replace("/finish")
+        } else {
+            window.location.replace("/quiz/" + item["next"])
+        }
     })
     $("#learn").click(function(e){
         window.location.replace("/learn/" + item["learn"])
