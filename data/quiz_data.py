@@ -79,7 +79,7 @@ quiz_data = {
         "id": "7",
         "type": "mcq",
         "previous": "6",
-        "next": "none",
+        "next": "finish",
         "learn": "13",
         "question": "Which one of the following wine is the most popular red wine?",
         "answer": "1",
