@@ -128,17 +128,3 @@
     font-size: 1.5rem;
 }
 
-/* Quiz */
-#question {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-.mcq_choice_label {
-    margin-left: 20px;
-}
-.mcq_choice {
-    margin-bottom: 8px;
-}
-.image_button {
-    text-align: center;
-}

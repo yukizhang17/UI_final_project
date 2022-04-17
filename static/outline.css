@@ -74,6 +74,37 @@ h1, h2, h3, h4, h5, h6, p {
   text-decoration: none;
 }
 
+/* For buttons on top left corner (e.g. to go back to quiz) */
+.custom-btn.btn-type-3 {
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #000;
+  /* background-color: #595260; */
+  color: #000;
+  text-decoration: none;
+  width:fit-content;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.custom-btn.btn-type-3:hover {
+  outline: none;
+  transition: 0.4s ease;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.custom-btn.btn-type-3:active, .custom-btn.btn-type-3:focus {
+  outline: none;
+  border: 1px solid #000;
+  text-decoration: none;
+}
+
 /* Basic Sectioning of the website */
 .section-wrapper {
   display: flex;

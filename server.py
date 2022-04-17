@@ -55,6 +55,25 @@ def quiz(id='1'):
   elif quiz_data[id]['type'] == 'drag':
     return render_template('quiz_drag_drop.html', item=quiz_data[id])
 
+@app.route('/quiz/<quiz_id>/learn/section/<id>')
+def quiz_learn_section(quiz_id='1', id='1'):
+  return render_template('quiz/learn/section_home.html', item=tutorial_data[id], quiz_id=quiz_id)
+
+@app.route('/quiz/<quiz_id>/learn/section/<section_id>/<id>')
+def quiz_learn(quiz_id='1', section_id='1', id='1'):
+  # Add more types of page if needed.
+  item = tutorial_data[section_id]['pages'][id]
+  if item['type'] == 'content-two-column':
+    return render_template('quiz/learn/tutorial_page.html', item=item, quiz_id=quiz_id)
+  elif item['type'] == 'content-one-column':
+    return render_template('quiz/learn/tutorial_page_one_column.html', item=item, quiz_id=quiz_id)
+  elif item['type'] == 'summary':
+    return render_template('quiz/learn/section_summary.html', item=item, quiz_id=quiz_id)
+  elif item['type'] == 'end':
+    return render_template('quiz/learn/tutorial_end.html', item=item, quiz_id=quiz_id)
+  
+  return quiz(quiz_id)
+
 # Quiz complete page with score
 @app.route('/finish')
 def finish():

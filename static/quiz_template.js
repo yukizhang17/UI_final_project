@@ -20,7 +20,7 @@ function setClickActions() {
         }
     })
     $("#learn").click(function(e){
-        window.location.replace("/learn/" + item["learn"])
+        window.location.replace("/quiz/" + item["id"] + "/learn/section/" + item["learn"])
     })
 }
 
