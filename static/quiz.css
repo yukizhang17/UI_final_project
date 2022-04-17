@@ -17,6 +17,13 @@ body {
     justify-content: center;
     text-align: center;
 }
+/* General */
+.correct {
+    background-color: green;
+}
+.incorrect {
+    background-color: red;
+}
 /* Quiz type: mcq */
 .mcq_choice_label {
     margin-left: 20px;

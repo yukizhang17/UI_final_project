@@ -15,10 +15,9 @@ function showActionButtons() {
         let prevbutton = $("<div class='custom-btn btn-type-2 mx-2' id='previous'></div>").html("Previous")
         $("#quizactions").append(prevbutton)
     }
-    if (item['next'] != 'none') {
-        let nextbutton = $("<div class='custom-btn btn-type-2 mx-2' id='next'></div>").html("Next")
-        $("#quizactions").append(nextbutton)
-    }
+
+    let nextbutton = $("<div class='custom-btn btn-type-2 mx-2' id='next'></div>").html("Next")
+    $("#quizactions").append(nextbutton)
 
     let learnbutton = $("<div class='custom-btn btn-type-2 mx-2' id='learn'></div>").html("Learn")
     $("#quizactions").append(learnbutton)
