@@ -30,7 +30,7 @@ def quiz(id='1'):
     if quiz_data[id]['type'] == 'mcq':
       return render_template('quiz_mcq.html', item=quiz_data[id])
     elif quiz_data[id]['type'] == 'mcq_with_side_image':
-      return render_template('quiz_mcq_with_image.html', item=quiz_data[id])
+      return render_template('quiz_mcq_with_side_image.html', item=quiz_data[id])
 
 # Quiz complete page with score
 @app.route('/finish')
@@ -56,12 +56,11 @@ def check_answer():
     user_answer = json_data["user_answer"]
     
     if (quiz_type == "mcq" or quiz_type == "mcq_with_side_image"):
-      # print("check answer for question ", quiz_id)
       answer = quiz_data[quiz_id]["answer"]
       isCorrect = (user_answer == answer)
       
     # Add question types for different types of checking the answer.
-    # Always have the fields [isCorrect,] [answer], [user_answer]
+    # Always have the fields [isCorrect], [answer], [user_answer]
 
     # Store the result for each question.
     quiz_result[quiz_id] = isCorrect
