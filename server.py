@@ -12,13 +12,23 @@ app = Flask(__name__)
 def home():
   return render_template('home.html')
 
-@app.route('/learn/<id>')
-def learn(id='1'):
+@app.route('/learn')
+def learn_section_page():
+  return render_template('learn/sections.html')
+
+@app.route('/learn/section/<id>')
+def learn_section(id='1'):
+  return render_template('learn/section_home.html', item=tutorial_data[id])
+
+@app.route('/learn/section/<section_id>/<id>')
+def learn(section_id='1', id='1'):
   # Add more types of page if needed.
-    if tutorial_data[id]['type'] == 'content':
-      return render_template('tutorial_page.html', item=tutorial_data[id])
-    elif tutorial_data[id]['type'] == 'summary':
-      return render_template('tutorial_summary.html', item=tutorial_data[id])
+  item = tutorial_data[section_id]['pages'][id]
+  if item['type'] == 'content-two-column':
+    return render_template('/learn/tutorial_page.html', item=item)
+  elif item['type'] == 'summary':
+    return render_template('/learn/section_summary.html', item=item)
+  return render_template('/learn/tutorial_page.html')
 
 @app.route('/quiz/<id>')
 def quiz(id='1'):

@@ -4,9 +4,111 @@
     font-size: 5rem;
 }
 
+/* Sections Page */
+#sections-page {
+    height: 80vh;
+    width: 100vw;
+    align-items: center;
+    padding: 0 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sections-page .wrapper {
+    width: 100%;
+}
+
+#sections-page .section {
+    width: 100%;
+    text-align: center;
+}
+
+#sections-page .section > * {
+    margin-bottom: 2rem;
+}
+
 #home p {
     font-size: 1.4rem;
     font-weight: 400;
+}
+
+/* Individual Section Home Page */
+.section-home-page .section-home-row {
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-home-page .section-home-row > * {
+    margin-top: 2rem;
+}
+
+.section-home-page .section-home-image {
+    max-width: 70%;
+    height: 250px;
+    object-fit: cover;
+    padding-bottom: 0.5rem;
+}
+
+.section-home-page .page-row {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.section-home-page .page-card {
+    max-width: 33%;
+    border: 1px solid transparent;
+    transition: border 0.4s ease;
+}
+
+.section-home-page .page-card:hover {
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.section-home-page .cta-button {
+    position: absolute;
+    bottom: 4rem;
+}
+
+/* Individual Tutorial Page */
+.tutorial-page h2 {
+    font-size: 2.5rem;
+}
+.tutorial-page ol li {
+    font-size: 1.8rem;
+}
+.tutorial-page p {
+    font-size: 1.5rem;
+}
+.cta-buttons {
+    display: flex;
+    position: absolute;
+    gap: 1rem;
+    bottom: 2rem;
+}
+
+.tutorial-page .cta-buttons .btn-type-1 {
+    font-size: 2rem;
+}
+
+/* Section Summary Page */
+.section-summary-page {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-summary-page ol, .section-summary-page p {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 1.5rem;
 }
 
 /* Quiz */

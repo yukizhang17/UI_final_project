@@ -5,6 +5,10 @@ body {
   overflow: hidden;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "Playfair Display", sans-serif;
+}
+
 .custom-btn {
   outline: none;
   background: transparent;
@@ -72,6 +76,12 @@ body {
 
 .section-wrapper .section > * {
   margin-top: 1rem;
+}
+
+.center-abs {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media screen and (max-width: 768px) {
