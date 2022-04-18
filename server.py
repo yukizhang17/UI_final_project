@@ -11,6 +11,7 @@ app = Flask(__name__)
 # Stores quiz result (correct or incorrect) for each quiz id.
 # Updated in check_answer() function. Can be used later for calculating quiz score.
 quiz_result = {}
+quiz_user_answer = {}
 
 @app.route('/')
 def home():
@@ -40,10 +41,14 @@ def learn(section_id='1', id='1'):
 
 @app.route('/quiz/<id>')
 def quiz(id='1'):
-  # TODO: Add quiz start page.
   # Add more types of page if needed.
   if id == 'start':
-    return render_template('quiz_start.html')
+    # Reset previously stored quiz data.
+    global quiz_result 
+    quiz_result = {}
+    global quiz_user_answer
+    quiz_user_answer = {}
+    return render_template('quiz_start.html', quiz_num=len(quiz_data))
   elif quiz_data[id]['type'] == 'mcq':
     return render_template('quiz_mcq.html', item=quiz_data[id])
   elif quiz_data[id]['type'] == 'image_mcq':
@@ -122,6 +127,9 @@ def check_answer():
         isCorrect[k] = False
       else:
         isCorrect[k] = True
+    for k in answer.keys():
+      if k not in user_answer.keys():
+        isCorrect[k] = False
     isCorrectAll = all(c for c in isCorrect.values())
   # Add question types for different types of checking the answer.
   # Always have the fields [isCorrect], [answer], [user_answer] for response.
@@ -129,6 +137,7 @@ def check_answer():
 
   # Store the result for each question.
   quiz_result[quiz_id] = isCorrectAll
+  quiz_user_answer[quiz_id] = user_answer
   print(isCorrect)
   return jsonify(correct = isCorrect, answer = answer, user_answer = user_answer)
 
