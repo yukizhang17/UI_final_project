@@ -1,4 +1,5 @@
 from flask import Flask
+import datetime
 from flask import render_template
 from flask import Response, request, jsonify
 # Import data from data folder.
@@ -22,12 +23,14 @@ def learn_section_page():
 
 @app.route('/learn/section/<id>')
 def learn_section(id='1'):
+  print("Section Page Served. ID:", id, "Timestamp:", datetime.datetime.now().isoformat())
   return render_template('learn/section_home.html', item=tutorial_data[id])
 
 @app.route('/learn/section/<section_id>/<id>')
 def learn(section_id='1', id='1'):
   # Add more types of page if needed.
   item = tutorial_data[section_id]['pages'][id]
+  print("Tutorial Page Served. ID:", id, "Timestamp:", datetime.datetime.now().isoformat())
   if item['type'] == 'content-two-column':
     return render_template('/learn/tutorial_page.html', item=item)
   elif item['type'] == 'content-one-column':
