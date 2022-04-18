@@ -37,6 +37,10 @@
     font-weight: 400;
 }
 
+.title_head {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
 /* Individual Section Home Page */
 .section-home-page .section-home-row {
     width: 100%;
