@@ -1,0 +1,17 @@
+{% extends "quiz_template.html" %}
+
+{% block quizcontent %}
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_mcq.js') }}"></script>
+    
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <img id="mcq_side_image" src={{item.image}} alt="Question {{item.id}} image" width=100%>
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <div id="mcq_choices"></div> 
+        </div>
+    </div>
+
+    <div id="mcq_choices"></div>
+    
+{% endblock %}

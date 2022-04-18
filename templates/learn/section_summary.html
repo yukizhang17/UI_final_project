@@ -1,0 +1,28 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="section-summary-page">
+  <h1 class="text-center">{{item.heading}}</h1>
+  {% for i in item.text %}
+    <p class="pt-4">{{i}}</p>  
+  {% endfor %}
+  {% if "steps" in item %}
+  <ol>
+    {% for step in item.steps %}
+      <li class="px-1 py-2">{{step}}</li>
+    {% endfor  %}
+  </ol>
+  {% endif  %}
+  <div class="cta-buttons center-abs">
+    <a href="{{item.previous}}" class="custom-btn btn-type-1 px-4">
+      Previous Page
+    </a>
+    <a href="{{item.next}}" class="custom-btn btn-type-1 px-4">
+      Next Section
+    </a>
+  </div>
+</div>
+
+{% endblock %}
