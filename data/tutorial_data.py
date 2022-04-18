@@ -170,6 +170,7 @@ tutorial_data = {
           "Color of a wine can help identify an older wine from a younger one.",
           "Darker colors signify older wine. Lighter shades mean younger wine."
         ],
+        "image": "/static/img/learn/color_wine.png",
         "images": [
           {
             "url": "/static/img/learn/young_red.jpeg",
