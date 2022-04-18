@@ -165,8 +165,7 @@ tutorial_data = {
       },
       "6": {
         "type": "content-one-column",
-        "heading": "Color",
-        "subtitle": "Red Wine",
+        "heading": "Color - Red Wine",
         "text": [
           "Color of a wine can help identify an older wine from a younger one.",
           "Darker colors signify older wine. Lighter shades mean younger wine."
@@ -184,14 +183,15 @@ tutorial_data = {
             "alt": "Older Red Wine Color"
           }
         ],
+        "image": "/static/img/learn/young_red.jpeg",
+        "alt": "Younger Red Wine Color",
         "previous": "/learn/section/2/5",
         "page_link": "/learn/section/2/6",
         "next": "/learn/section/2/7"
       },
       "7": {
         "type": "content-one-column",
-        "heading": "Color",
-        "subtitle": "White Wine",
+        "heading": "Color - White Wine",
         "text": [
           "Brighter colors in a white wine signify younger wines.",
           "Duller colors mean older white wines."
@@ -208,6 +208,8 @@ tutorial_data = {
             "alt": "Older White Wine Color"
           }
         ],
+        "image": "/static/img/learn/young_white.jpeg",
+        "alt": "Younger White Wine Color",
         "previous": "/learn/section/2/6",
         "page_link": "/learn/section/2/7",
         "next": "/learn/section/2/8"

@@ -35,7 +35,6 @@
 
 /* Individual Section Home Page */
 .section-home-page .section-home-row {
-    margin-top: 5rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -52,6 +51,10 @@
     height: 250px;
     object-fit: cover;
     padding-bottom: 0.5rem;
+}
+
+.section-home-page .section-browse-header {
+    margin-top: 5rem;
 }
 
 .section-home-page .page-card {
