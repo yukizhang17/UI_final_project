@@ -19,10 +19,10 @@ body {
 }
 /* General */
 .correct {
-    background-color: green;
+    background-color: green !important;
 }
 .incorrect {
-    background-color: red;
+    background-color: red !important;
 }
 /* Quiz type: mcq */
 .mcq_choice_label {
@@ -69,4 +69,28 @@ body {
 .match_canvas {
     display: block;
     position: fixed;
-  }
+}
+.drop_rect {
+    width:100%;
+    height:200px;
+    background:white;
+    border: 1px black solid;
+}
+.drag_items {
+    background-color: white;
+    margin-top: 10px;
+}
+.dropped_items {
+    background-color: #f9f5f1;
+    margin-top: 10px;
+}
+
+.center_item {
+    text-align: center;
+}
+
+.quiz_start_stat {
+    margin-top: 100px;
+}
+
+  

@@ -1,4 +1,4 @@
-function initialize_choices(choices) {
+function initialize_choices_with_img(choices) {
     $("#mcq_img_choices").empty()
 
     let space = $("<div class='col-md-2'></div>")

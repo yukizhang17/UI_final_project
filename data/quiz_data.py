@@ -6,7 +6,7 @@ quiz_data = {
         "type": "image_mcq",
         "previous": "none",
         "next": "2",
-        "learn": "10",
+        "learn": "1/1",
         "question": "Which of these is the correct way to hold a wine glass?",
         "answer": "1",
         "choices":{
@@ -14,12 +14,28 @@ quiz_data = {
             "2": "/static/img/quiz_img/quiz1_2.webp"
         }
     },
+    "2": {
+        "id": "2",
+        "type": "drag",
+        "previous": "1",
+        "next": "3",
+        "learn": "1/4",
+        "question": "Please drag and drop to the left the correct sequence to sip wine.",
+        "answer": {"1": "2", "2": "5", "3": "1"},
+        "choices":{
+            "1": "Sip the Wine",
+            "2": "Hold the glass correctly from the stem",
+            "3": "Down the whole glass",
+            "4": "Drink from the bottle",
+            "5": "Sniff"
+        }
+    },
     "3": {
         "id": "3",
         "type": "mcq",
         "previous": "2",
         "next": "4",
-        "learn": "10",
+        "learn": "2/6",
         "question": "Select the correct option:",
         "answer": "3",
         "choices":{
@@ -33,7 +49,7 @@ quiz_data = {
         "type": "mcq_with_side_image",
         "previous": "3",
         "next": "5",
-        "learn": "5",
+        "learn": "2/1",
         "question": "What are the drops of wine falling down called?",
         "answer": "1",
         "choices":{
@@ -48,7 +64,7 @@ quiz_data = {
         "type": "image_mcq",
         "previous": "4",
         "next": "6",
-        "learn": "10",
+        "learn": "2/6",
         "question": "Which one of these wines is younger?",
         "answer": "2",
         "choices":{
@@ -61,7 +77,7 @@ quiz_data = {
         "type": "match",
         "previous": "5", 
         "next": "7",
-        "learn": "",
+        "learn": "3",
         "question": "Match food and type of wine that goes well together.",
         "choices_left": {
             "1": "Meat",
@@ -80,7 +96,7 @@ quiz_data = {
         "type": "mcq",
         "previous": "6",
         "next": "finish",
-        "learn": "13",
+        "learn": "3/1",
         "question": "Which one of the following wine is the most popular red wine?",
         "answer": "1",
         "choices":{
