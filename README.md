@@ -4,6 +4,12 @@
 
 We aim to teach people the basics of the subtle art of wine tasting. You can learn all about how to sip wine properly and the different properties to look out for in a wine. We also introduce you to some of the popular wines out there.
 
+## TODO
+
+1. **Responsiveness**: Currently only the navbar is responsive. We need to work on making the whole website responsive in the next iteration.
+2. **Graphic Design:** The Quiz section of the web app still doesn't fully adopt all the graphic design changes from the learning section. We aim to complete this in the next iteration.
+3. **Animations:** We will also add animations to the graphic design part of the website in the next iteration to make everything seem seamless.
+
 ## CSS Structure
 
 #### Information Structure

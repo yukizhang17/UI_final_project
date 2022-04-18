@@ -17,10 +17,14 @@
 
 #sections-page .wrapper {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 5rem;
 }
 
 #sections-page .section {
-    width: 100%;
+    min-width: 50%;
+    flex-grow: 1;
     text-align: center;
 }
 

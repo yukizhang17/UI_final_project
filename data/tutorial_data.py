@@ -3,6 +3,7 @@
 tutorial_data = {
   "1": {
     "section_name": "Section 1: Sipping Wine Sommelier Style",
+    "section_home": "/learn/section/1",
     "pages": {
       "1": {
         "type": "content-two-column",
@@ -64,6 +65,7 @@ tutorial_data = {
   },
   "2": {
   "section_name": "Section 2: Wine Properties",
+  "section_home": "/learn/section/2",
     "pages": {
       "1": {
         "type": "content-two-column",
@@ -236,6 +238,7 @@ tutorial_data = {
   },
   "3": {
     "section_name": "Section 3: An introduction to popular wines",
+    "section_home": "/learn/section/3",
     "pages": {
       "1": {
         "type": "content-two-column",

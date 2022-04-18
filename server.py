@@ -20,7 +20,7 @@ def home():
 
 @app.route('/learn')
 def learn_section_page():
-  return render_template('learn/sections.html')
+  return render_template('learn/sections.html', item=tutorial_data)
 
 @app.route('/learn/section/<id>')
 def learn_section(id='1'):

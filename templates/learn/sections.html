@@ -1,25 +1,15 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+<!-- Should be made dynamic in next iteration. -->
 <div class="sections-wrapper" id="sections-page">
   <div class="wrapper">
-    <div class="row">
-      <div class="section col-md-6">
-        <h2>Section 1: Sipping Wine Sommelier Style</h2>
-        <a href="/learn/section/1" class="custom-btn btn-type-1 px-4">Start</a>
-      </div>
-      <div class="section col-md-6">
-        <h2>Section 2: Wine Properties</h2>
-        <a href="/learn/section/2" class="custom-btn btn-type-1 px-4">Start</a>
-      </div>
+    {% for k, section in item.items() %}
+    <div class="section">
+      <h2>{{section.section_name}}</h2>
+      <a href="{{section.section_home}}" class="custom-btn btn-type-1 px-4">Start</a>
     </div>
-    <div class="row mt-5">
-      <div class="section mt-5">
-        <h2>Section 3: An introduction to popular wines</h2>
-        <a href="/learn/section/3" class="custom-btn btn-type-1 px-4">Start</a>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
 
