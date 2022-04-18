@@ -84,7 +84,9 @@ body {
     background-color: #f9f5f1;
     margin-top: 10px;
 }
-
+.image_button {
+    text-align: center;
+}
 .center_item {
     text-align: center;
 }
