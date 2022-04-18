@@ -22,6 +22,7 @@ let submitted = false;
 // has a match (with C). Replace the match with most recent one (A-B will be matched instead of B-C).
 // Current behavior keeps the (B-C) match.
 // TODO: When screen is resized, restore already selected answers.
+// TODO: Handle screen scroll (element position offset)
 
 function initialize_data(choices_left, choices_right) {
     $.each(Object.keys(choices_left), function(index, choice_idx){
@@ -174,12 +175,18 @@ function submit() {
     if (Object.keys(user_answer_left).length != Object.keys(item["choices_left"]).length) {
         return false;
     }
+    let complete = true
     // User answer not complete
-    $.each(user_answer_left, function(index, choice_idx){
+    $.each(Object.keys(user_answer_left), function(index, choice_idx){
         if(!user_answer_left[choice_idx]){
-            return false;
+            console.log(choice_idx + "null, return false");
+            complete = false;
+            return false
         }
     })
+    if (!complete) {
+        return false
+    }
 
     $.ajax({
         type: "POST",
@@ -328,6 +335,11 @@ function initialize_click_actions(choices_left, choices_right) {
 
 // If window size changes, set the canvas size again.
 $(window).on("resize", function(){
+    setCanvas(item["choices_left"], item["choices_right"])
+    // TODO: Restore already selected answers 
+});
+
+$(window).on("scroll", function(){
     setCanvas(item["choices_left"], item["choices_right"])
     // TODO: Restore already selected answers 
 });
