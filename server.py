@@ -11,6 +11,7 @@ app = Flask(__name__)
 
 # Stores quiz result (correct or incorrect) for each quiz id.
 # Updated in check_answer() function. Can be used later for calculating quiz score.
+#Takes the data from the tutorial_data.py and from quiz_data.py
 quiz_result = {}
 quiz_user_answer = {}
 
