@@ -1,14 +1,14 @@
 var init_choices = []
 var user_choice = []
 
-function initialize_choices(choices) {
+function generate_option_list(choices) {
     $.each(Object.keys(choices), function(index, choice_idx){
         init_choices.push(choice_idx)
     })
 }
 
 function make_choices(choices) {
-    $("#drag_item").empty()
+    $("#option_drag_item").empty()
     $.each(init_choices, function(index, choice_idx){
         let div = $("<div>")
         div.attr('data-name', choice_idx)
@@ -18,10 +18,10 @@ function make_choices(choices) {
         div.draggable({
             revert:"invalid"
         })
-        $("#drag_item").append(div)
+        $("#option_drag_item").append(div)
     })
 
-    $('.ui-draggable').each(function(){
+    $('.drag_items').each(function(){
         $(this).hover(function(){
             $(this).css('background-color','lightyellow')
             $(this).css('cursor','move')
@@ -33,10 +33,11 @@ function make_choices(choices) {
 }
 
 function init_user_answer(choices) {
-    $("#drop_box").empty()
+    $("#answer_drop_box").empty()
     $.each(user_choice, function(index, choice_idx){
         let div = $("<div>")
         div.addClass('dropped_items')
+        div.attr('data-name', choice_idx)
         div.prop({
             id: "choice_" + (index+1).toString()
         })
@@ -45,15 +46,15 @@ function init_user_answer(choices) {
         div.draggable({
             revert:"invalid"
         })
-        $("#drop_box").append(div)
+        $("#answer_drop_box").append(div)
     })
 
-    $('.ui-draggable').each(function(){
+    $('.dropped_items').each(function(){
         $(this).hover(function(){
             $(this).css('background-color','lightyellow')
             $(this).css('cursor','move')
         }, function(){
-            $(this).css('background-color', 'white')
+            $(this).css('background-color', '#f9f5f1')
             $(this).css('cursor','pointer')
         })
     })
@@ -107,12 +108,12 @@ function submit(choices) {
 
 
 $(document).ready(function(){
-    initialize_choices(item["choices"])
+    generate_option_list(item["choices"])
 
     make_choices(item["choices"])
     init_user_answer(item["choices"])
 
-    $("#drop_box").droppable({
+    $("#answer_drop_box").droppable({
         drop: function(event, ui) {
             let drop_name = $(ui.draggable).attr('data-name')
             init_choices = $.grep(init_choices, function(value) {
@@ -131,10 +132,25 @@ $(document).ready(function(){
         }
     })
 
+    $("#answer_drop_box").on("click", ".dropped_items", function(){
+        let drop_name = $(this).attr('data-name')
+        drop_name = drop_name.toString()
+        user_choice = $.grep(user_choice, function(value) {
+            return value != drop_name;
+        })
+        if (jQuery.inArray(drop_name, init_choices) === -1) {
+            init_choices.push(drop_name)
+        }
+        init_choices.sort()
+        make_choices(item["choices"])
+        init_user_answer(item["choices"])
+
+    })
+
     $("#revert").click(function(e) {
         init_choices = []
         user_choice = []
-        initialize_choices(item["choices"])
+        generate_option_list(item["choices"])
         make_choices(item["choices"])
         init_user_answer(item["choices"])
     })
