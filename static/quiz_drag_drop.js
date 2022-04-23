@@ -126,14 +126,16 @@ $(document).ready(function(){
     })
 
     $("#submit").click(function(e){
-        e.preventDefault();
-        $('.ui-draggable').draggable({ disabled: true })
-        $('#revert').hide()
-        let result = submit(item["choices"]);
-        if (result) {
-            // onSubmit() function defined in quiz_template.js 
-            // Removes submit button and adds next set of action buttons.
-            onSubmit();
+        if (user_choice.length() != 0) {
+            $('.ui-draggable').draggable({ disabled: true })
+            $('#revert').hide()
+            let result = submit(item["choices"]);
+            if (result) {
+                // onSubmit() function defined in quiz_template.js 
+                // Removes submit button and adds next set of action buttons.
+                onSubmit();
+            }
         }
+        
     })
 })
