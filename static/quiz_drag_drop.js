@@ -42,7 +42,20 @@ function init_user_answer(choices) {
         })
         let choice = choices[choice_idx]
         div.text(choice)
+        div.draggable({
+            revert:"invalid"
+        })
         $("#drop_box").append(div)
+    })
+
+    $('.ui-draggable').each(function(){
+        $(this).hover(function(){
+            $(this).css('background-color','lightyellow')
+            $(this).css('cursor','move')
+        }, function(){
+            $(this).css('background-color', 'white')
+            $(this).css('cursor','pointer')
+        })
     })
 }
 
@@ -91,6 +104,7 @@ function submit(choices) {
     });
     return true;
 }
+
 
 $(document).ready(function(){
     initialize_choices(item["choices"])
