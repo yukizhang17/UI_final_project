@@ -43,15 +43,10 @@ function initialize_choices_with_img(choices) {
         button.prop({
             id: choice_idx,
             value: choice_idx
-        })
-        let label = $("<label>")
-        label.append(choice_img)
-        label.append("<br><br>")
-        label.append(button)
-        label.prop({
-            id: choice_idx + "-label"
         })        
-        div.append(label)
+        div.append(choice_img)
+        div.append($("<br><br>"))
+        div.append(button)
         $("#mcq_img_choices").append(div)
     })
 }
