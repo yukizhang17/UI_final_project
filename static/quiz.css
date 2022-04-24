@@ -22,7 +22,7 @@ body {
     font-size: 2rem;
 }
 #quizactions {
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
@@ -137,6 +137,7 @@ body {
 .drag_items {
     background-color: white;
     margin-top: 10px;
+    padding: 5px;
 }
 .dropped_items {
     background-color: #f9f5f1;
@@ -146,7 +147,7 @@ body {
     align-items: center;
 }
 .dropped_items.correct > .remove-drag, .dropped_items.incorrect > .remove-drag {
-    color: #fff;
+    display: none;
 }
 .remove-drag {
     background: transparent;

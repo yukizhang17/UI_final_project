@@ -52,17 +52,17 @@ def quiz(id='1'):
     quiz_result = {}
     global quiz_user_answer
     quiz_user_answer = {}
-    return render_template('quiz_start.html', quiz_num=len(quiz_data))
+    return render_template('quiz/quiz_start.html', quiz_num=len(quiz_data))
   elif quiz_data[id]['type'] == 'mcq':
-    return render_template('quiz_mcq.html', item=quiz_data[id])
+    return render_template('quiz/quiz_mcq.html', item=quiz_data[id])
   elif quiz_data[id]['type'] == 'image_mcq':
-    return render_template('quiz_mcq_img.html', item=quiz_data[id])
+    return render_template('quiz/quiz_mcq_img.html', item=quiz_data[id])
   elif quiz_data[id]['type'] == 'mcq_with_side_image':
-    return render_template('quiz_mcq_with_side_image.html', item=quiz_data[id])
+    return render_template('quiz/quiz_mcq_with_side_image.html', item=quiz_data[id])
   elif quiz_data[id]['type'] == 'match':
-    return render_template('quiz_match.html', item=quiz_data[id])
+    return render_template('quiz/quiz_match.html', item=quiz_data[id])
   elif quiz_data[id]['type'] == 'drag':
-    return render_template('quiz_drag_drop.html', item=quiz_data[id])
+    return render_template('quiz/quiz_drag_drop.html', item=quiz_data[id])
 
 @app.route('/quiz/<quiz_id>/learn/section/<id>')
 def quiz_learn_section(quiz_id='1', id='1'):
@@ -95,7 +95,7 @@ def finish():
   
   print(total_quiz_num, total_correct_num)
   
-  return render_template('quiz_end.html', total_quiz_num=str(total_quiz_num), total_correct_num=str(total_correct_num))
+  return render_template('quiz/quiz_end.html', total_quiz_num=str(total_quiz_num), total_correct_num=str(total_correct_num))
 
 # ajax calls
 # Check answer of the quiz and save the score for each question.

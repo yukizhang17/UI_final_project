@@ -138,6 +138,7 @@ $(document).ready(function(){
     })
 
     $("#answer_drop_box").on("click", ".remove-drag", function(){
+        if($(this).parent().hasClass('correct') || $(this).parent().hasClass('incorrect')) return
         let drop_name = $(this).attr('data-name')
         drop_name = drop_name.toString()
         user_choice = $.grep(user_choice, function(value) {
