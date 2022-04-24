@@ -46,11 +46,15 @@ function initialize_choices_with_img(choices) {
         button.prop({
             id: choice_idx,
             value: choice_idx
+        })
+        let label = $("<label>")
+        label.append(choice_img)
+        label.append("<br><br>")
+        label.append(button)
+        label.prop({
+            id:choice_idx + "_label"
         })        
-        div.append(choice_img)
-        div.append($("<br><br>"))
-        div.append(button)
-        choice_img.on('click', radioButtonSelector)
+        div.append(label)
         $("#mcq_img_choices").append(div)
     })
 }

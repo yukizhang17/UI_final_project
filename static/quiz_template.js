@@ -34,7 +34,7 @@ function showActionButtons() {
     let nextbutton = $("<div class='custom-btn btn-type-2 mx-2' id='next'></div>").html("Next")
     $("#quizactions").append(nextbutton)
 
-    let learnbutton = $("<button class='custom-btn btn-type-2 mx-2' id='learn'></button>").html("Learn")
+    let learnbutton = $("<button class='custom-btn btn-type-2 mx-2 py-2' id='learn'></button>").html("Learn")
     $("#question").append(learnbutton)
 }
 

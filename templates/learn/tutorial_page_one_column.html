@@ -3,6 +3,16 @@
 
 {% block content %}
 
+{% if quiz_id is defined %}
+  <!-- If navigated from quiz page, update the page so the user can go back to the quiz question -->
+  <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_learn_template.js') }}"></script>
+  <script>
+      let item = {{item|tojson}}
+      let quiz_id =  {{quiz_id}}
+  </script>
+  <div id="back" class="custom-btn btn-type-3">Go back to quiz</div>
+{% endif %}
+
 <div class="container text-center tutorial-page-one-column">
   <h2>{{item.heading}}</h2>
   {% for i in item.text %}
@@ -17,10 +27,10 @@
     {% endfor %}
   </div>
   <div class="cta-buttons center-abs">
-    <a href="{{item.previous}}" class="custom-btn btn-type-1 px-4">
+    <a href="{{item.previous}}" id="previous" class="custom-btn btn-type-1 px-4">
       <
     </a>
-    <a href="{{item.next}}" class="custom-btn btn-type-1 px-4">
+    <a href="{{item.next}}" id="next" class="custom-btn btn-type-1 px-4">
       >
     </a>
   </div>

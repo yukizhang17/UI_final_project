@@ -76,7 +76,7 @@ body {
     object-fit: cover;
 }
 .quiz-image {
-    height: 500px;
+    height: 350px;
     width: auto;
     cursor: pointer;
 }
@@ -141,6 +141,18 @@ body {
 .dropped_items {
     background-color: #f9f5f1;
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropped_items.correct > .remove-drag, .dropped_items.incorrect > .remove-drag {
+    color: #fff;
+}
+.remove-drag {
+    background: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
 }
 .image_button {
     text-align: center;
