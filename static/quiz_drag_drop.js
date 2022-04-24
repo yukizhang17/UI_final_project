@@ -13,6 +13,7 @@ function make_choices(choices) {
         let div = $("<div>")
         div.attr('data-name', choice_idx)
         div.addClass('drag_items')
+        div.addClass('p-2')
         let choice = choices[choice_idx]
         div.text(choice)
         div.draggable({
@@ -39,10 +40,14 @@ function init_user_answer(choices) {
         div.addClass('dropped_items')
         div.attr('data-name', choice_idx)
         div.prop({
-            id: "choice_" + (index+1).toString()
+            id: "choice_" + (index+1).toString(),
+            class: "dropped_items p-2 mx-2"
         })
         let choice = choices[choice_idx]
-        div.text(choice)
+        div.text((index+1) + ". " + choice)
+        let closeButton = $('<button class="remove-drag"><i class="fa-solid fa-xmark"></i></button>')
+        closeButton.attr('data-name', choice_idx)
+        div.append(closeButton)
         div.draggable({
             revert:"invalid"
         })
@@ -72,7 +77,8 @@ function showFeedback(user_answer, correct) {
 }
 
 function submit(choices) {
-    if (user_choice.length === 0) {
+    console.log(user_choice)
+    if (user_choice.length == 0) {
         return false
     }
 
@@ -132,7 +138,8 @@ $(document).ready(function(){
         }
     })
 
-    $("#answer_drop_box").on("click", ".dropped_items", function(){
+    $("#answer_drop_box").on("click", ".remove-drag", function(){
+        if($(this).parent().hasClass('correct') || $(this).parent().hasClass('incorrect')) return
         let drop_name = $(this).attr('data-name')
         drop_name = drop_name.toString()
         user_choice = $.grep(user_choice, function(value) {
@@ -157,10 +164,10 @@ $(document).ready(function(){
 
     $("#submit").click(function(e){
         e.preventDefault();
-        $('.ui-draggable').draggable({ disabled: true })
-        $('#revert').hide()
         let result = submit(item["choices"]);
         if (result) {
+            $('.ui-draggable').draggable({ disabled: true })
+            $('#revert').hide()
             // onSubmit() function defined in quiz_template.js 
             // Removes submit button and adds next set of action buttons.
             onSubmit();

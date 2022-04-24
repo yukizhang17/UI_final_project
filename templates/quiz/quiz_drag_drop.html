@@ -3,7 +3,7 @@
 {% block quizcontent %}
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_drag_drop.js') }}"></script>
     
-    <div class="row">
+    <div class="row pb-5">
         <div class="col-md-1 col-sm-1"></div>
         <div class="col-md-4 col-sm-10">
             <div id="answer_drop_box" class="drop_rect"></div>
@@ -11,10 +11,13 @@
         <div class="col-md-1"></div>
         <div class="col-md-4 col-sm-10">
             <div id="option_drag_item"></div>
+            <div class="text-center">
+                <button class="custom-btn btn-type-3 m-0 mt-3" type="button" id="revert">Revert</button>
+            </div>
         </div>
-        <div class="col-md-2 col-sm-1">
-            <button type="button" id="revert">Revert</button>
-        </div>
+        <!-- <div class="col-md-2 col-sm-1">
+            <button class="custom-btn btn-type-3" type="button" id="revert">Revert</button>
+        </div> -->
     </div>
     
 {% endblock %}
