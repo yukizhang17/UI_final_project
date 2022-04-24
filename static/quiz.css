@@ -30,11 +30,11 @@ body {
 }
 /* General */
 .correct {
-    background-color: #00a300 !important;
+    background-color: #63a671 !important;
     color: #fff;
 }
 .incorrect {
-    background-color: red !important;
+    background-color: #f8464c !important;
     color: #fff;
 }
 /* Quiz type: mcq */
@@ -44,6 +44,7 @@ body {
 
 .match_choice_label.correct, .match_choice_label.incorrect {
     color: #fff;
+    border: 1px solid transparent;
 }
 
 .mcq_choice {
