@@ -3,10 +3,20 @@
 {% extends "layout.html" %}
 
 {% block content %}
+{% if quiz_id is defined %}
+<!-- If navigated from quiz page, update the page so the user can go back to the quiz question -->
+  <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_learn_template.js') }}"></script>
+  <script>
+      let item = {{item|tojson}}
+      let quiz_id =  {{quiz_id}}
+  </script>
+  <div id="back" class="custom-btn btn-type-3">Go back to quiz</div>
+{% endif %}
+
 <div class="section-home-page">
   <h1 class="text-center pt-4">{{item.section_name}}</h1>
   <div class="text-center mt-5 pt-3">
-    <a href="{{item.pages["1"].page_link}}" class="custom-btn btn-type-1">
+    <a href="{{item.pages["1"].page_link}}" id="start" class="custom-btn btn-type-1">
       Learn from the Start
     </a>
   </div>
@@ -14,7 +24,7 @@
   <div class="row w-100 text-center section-home-row pb-5">
     {% for i, page in item.pages.items() %}
       {% if page.type != 'summary' and page.type != 'end' %}
-        <div class="page-card" onclick="window.location.href='{{page.page_link}}'">
+        <div class="page-card" onclick="window.location.href='{{page.page_link}}'" data-link="{{page.page_link}}">
           <img class="section-home-image" src="{{page.image}}" alt="Holding a Wine Glass">
           <h2>{{page.heading}}</h2>
         </div>
