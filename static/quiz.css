@@ -17,9 +17,11 @@ body {
 
 /* Quiz template */
 #question {
+    align-items: baseline;
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: 2rem;
+    height: 2.8rem; /* Needs to be greater than or equal to Learn button's height*/
 }
 #quizactions {
     margin-top: 50px;
@@ -27,6 +29,10 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
+}
+
+#learn {
+    float: right;
 }
 /* General */
 .correct {
