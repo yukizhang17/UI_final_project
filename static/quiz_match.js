@@ -21,8 +21,6 @@ let submitted = false;
 // TODO: Handle cases in which user matches the selected choice(A) with another choice(B) that already
 // has a match (with C). Replace the match with most recent one (A-B will be matched instead of B-C).
 // Current behavior keeps the (B-C) match.
-// TODO: When screen is resized, restore already selected answers.
-// TODO: Handle screen scroll (element position offset)
 
 function initialize_data(choices_left, choices_right) {
     $.each(Object.keys(choices_left), function(index, choice_idx){
@@ -88,11 +86,40 @@ function showFeedback(user_answer_left, answer, correct) {
     })
 }
 
+function setUserAnswers() {
+    $.each(Object.keys(user_answer_left), function(index, choice_idx){
+        if (user_answer_left[choice_idx]) {
+            let right_idx = user_answer_left[choice_idx]
+            let c = canvas_list[canvas_idx]
+            canvas_dict_left[choice_idx] = c
+            canvas_dict_right[right_idx] = c
+            canvas_idx += 1
+            let left_dot = $("#choice_left_dot" + choice_idx)
+            let right_dot = $("#choice_right_dot" + right_idx)
+
+            let rect = left_dot[0].getBoundingClientRect();
+            start_y = ((rect.top + rect.bottom) / 2 - canvas_top)
+            start_x = ((rect.left + rect.right) / 2 - canvas_left)
+
+            rect = right_dot[0].getBoundingClientRect();
+            let right_end_y = ((rect.top + rect.bottom) / 2 - canvas_top)
+            let right_end_x = ((rect.left + rect.right) / 2 - canvas_left)
+
+            let ctx = c.getContext("2d");
+            ctx.clearRect(0, 0, c.width, c.height);
+            drawLine(ctx, right_end_x, right_end_y)
+        }
+    })
+}
+
 function setCanvas(choices_left, choices_right) {
     let top = 9999999
     let left = 99999999
     let bottom = 0
     let right = 0
+    canvas_used = []
+    canvas_list = []
+    canvas_idx = 0
     $.each(Object.keys(choices_left), function(index, choice_idx){
         let dot = $("#choice_left_" + choice_idx)
         let rect = dot[0].getBoundingClientRect();
@@ -336,12 +363,12 @@ function initialize_click_actions(choices_left, choices_right) {
 // If window size changes, set the canvas size again.
 $(window).on("resize", function(){
     setCanvas(item["choices_left"], item["choices_right"])
-    // TODO: Restore already selected answers 
+    setUserAnswers()
 });
 
 $(window).on("scroll", function(){
     setCanvas(item["choices_left"], item["choices_right"])
-    // TODO: Restore already selected answers 
+    setUserAnswers()
 });
 
 $(document).ready(function(){
@@ -370,7 +397,8 @@ $(document).ready(function(){
             y = e.pageY;
             let ctx = curr_canvas.getContext("2d");
             ctx.clearRect(0, 0, curr_canvas.width, curr_canvas.height);
-            drawLine(ctx, x-canvas_left, y-canvas_top)
+            // console.log(this.scrollY)
+            drawLine(ctx, x-canvas_left, y-canvas_top-this.scrollY)
         }
     });
 
