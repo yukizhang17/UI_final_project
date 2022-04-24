@@ -89,6 +89,17 @@ body {
     margin-top: 10px;
     padding: 5px;
 }
+.image_choice_container {
+    display: inline-block;
+    padding: 15px;
+    height: 100%;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+}
+.image_choice {
+    width: 100%;
+}
 .image_button {
     text-align: center;
 }

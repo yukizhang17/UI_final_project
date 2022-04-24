@@ -25,20 +25,21 @@ function initialize_choices(choices) {
 function initialize_choices_with_img(choices) {
     $("#mcq_img_choices").empty()
 
-    let space = $("<div class='col-md-2'></div>")
-    $("#mcq_img_choices").append(space)
+    // let space = $("<div class='col-md-2'></div>")
+    // $("#mcq_img_choices").append(space)
 
     $.each(Object.keys(choices), function(index, choice_idx){
-        let div = $("<div class='col-md-4 col-sm-6 image_button'></div>")
+        let col = $("<div class='col-md-4 col-sm-6 image_button text-center'></div>")
+        let div = $("<div class='image_choice_container'></div>")
         div.prop({
             id: "choice" + choice_idx
         })
         let choice = choices[choice_idx]
 
-        let choice_img = $("<img>")
+        let choice_img = $("<img class='image_choice'>")
         choice_img.attr('src', choice)
-        choice_img.width('50%')
-        choice_img.height("auto")
+        // choice_img.width('50%')
+        // choice_img.height("auto")
         let button = $("<input type='radio' name='choice' class='center_item'></div>")
         button.prop({
             id: choice_idx,
@@ -52,7 +53,8 @@ function initialize_choices_with_img(choices) {
             id:choice_idx + "_label"
         })        
         div.append(label)
-        $("#mcq_img_choices").append(div)
+        col.append(div)
+        $("#mcq_img_choices").append(col)
     })
 }
 
