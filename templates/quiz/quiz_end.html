@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <script>
+        let total_quiz_num = {{total_quiz_num}}
+        let total_correct_num = {{total_correct_num}}
+    </script>
+
+    <!-- Quiz Complete page with score -->
+    <div class="sections-wrapper" id="sections-page">
+        <div class="wrapper justify-content-center">
+            <div class="row">
+                <div class="section">
+                    <h2>Congratulations!</h2>
+                    <h4>You scored: {{total_correct_num}} out of {{total_quiz_num}}</h4>
+                    <div class="quiz_start_stat">
+                        <a href="/learn" class="custom-btn btn-type-1 px-4 mx-3">Learn Again</a>
+                        <a href="/quiz/start" class="custom-btn btn-type-1 px-4">Quiz Me Again</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
