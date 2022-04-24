@@ -38,10 +38,6 @@ body {
     color: #fff;
 }
 /* Quiz type: mcq */
-.mcq_choice_label {
-    margin-left: 20px;
-}
-
 .match_choice_label.correct, .match_choice_label.incorrect {
     color: #fff;
     border: 1px solid transparent;
@@ -51,10 +47,11 @@ body {
     margin-bottom: 8px;
     padding: 0.5rem;
     padding-left: 2rem;
+    width: 600px;
 }
 .quiz-radio-label {
     font-size: 1.3rem;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 .form-check.correct > .form-check-input:disabled~.form-check-label {
