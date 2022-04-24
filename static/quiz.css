@@ -19,10 +19,10 @@ body {
 }
 /* General */
 .correct {
-    background-color: green !important;
+    background-color: #63a671 !important;
 }
 .incorrect {
-    background-color: red !important;
+    background-color: #f8464c !important;
 }
 /* Quiz type: mcq */
 .mcq_choice_label {
