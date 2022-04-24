@@ -13,6 +13,7 @@ function make_choices(choices) {
         let div = $("<div>")
         div.attr('data-name', choice_idx)
         div.addClass('drag_items')
+        div.addClass('p-2')
         let choice = choices[choice_idx]
         div.text(choice)
         div.draggable({
@@ -36,9 +37,9 @@ function init_user_answer(choices) {
     $("#drop_box").empty()
     $.each(user_choice, function(index, choice_idx){
         let div = $("<div>")
-        div.addClass('dropped_items')
         div.prop({
-            id: "choice_" + (index+1).toString()
+            id: "choice_" + (index+1).toString(),
+            class: "dropped_items p-2 mx-2"
         })
         let choice = choices[choice_idx]
         div.text(choice)

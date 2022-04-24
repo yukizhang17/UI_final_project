@@ -4,11 +4,22 @@
 body {
     font-family: "Playfair Display", sans-serif;
 }
+
+.container.container-full-height {
+    min-height: 80vh;
+}
+
+.container.container-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* Quiz template */
 #question {
     margin-top: 50px;
     margin-bottom: 50px;
-    font-size: 1.3rem;
+    font-size: 2rem;
 }
 #quizactions {
     margin-top: 20px;
@@ -19,22 +30,68 @@ body {
 }
 /* General */
 .correct {
-    background-color: green !important;
+    background-color: #00a300 !important;
+    color: #fff;
 }
 .incorrect {
     background-color: red !important;
+    color: #fff;
 }
 /* Quiz type: mcq */
 .mcq_choice_label {
     margin-left: 20px;
 }
+
+.match_choice_label.correct, .match_choice_label.incorrect {
+    color: #fff;
+}
+
 .mcq_choice {
     margin-bottom: 8px;
+    padding: 0.5rem;
+    padding-left: 2rem;
+}
+.quiz-radio-label {
+    font-size: 1.3rem;
+    padding-left: 10px;
+}
+
+.form-check.correct > .form-check-input:disabled~.form-check-label {
+    color: #fff;
+}
+
+.form-check.incorrect > .form-check-input:disabled~.form-check-label {
+    color: #fff;
+}
+
+.quiz-row {
+    justify-content: center;
+    column-gap: 2rem;
 }
 /* Quiz type: mcq with side image */
 #mcq_side_image {
     margin-bottom: 10px;
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
 }
+.quiz-image {
+    height: 500px;
+    width: auto;
+    cursor: pointer;
+}
+.custom-radio-button {
+    width: 2em;
+    height: 2em;
+    border: 0;
+}
+
+.custom-radio-button-small {
+    width: 1.4em;
+    height: 1.4em;
+    border: 0;
+}
+
 /* Quiz type: match */
 .match_choice_label {
     text-align: center;
@@ -42,13 +99,14 @@ body {
     border: 1px solid #000;
     color: #000;
     text-decoration: none;
-    width:200px;
+    width:300px;
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
     display: inline-block;
     user-select: none;
+    font-size: 1.3rem;
 }
 .match_choice_dot {
     margin-left: 30px;
@@ -72,7 +130,7 @@ body {
 }
 .drop_rect {
     width:100%;
-    height:200px;
+    height:300px;
     background:white;
     border: 1px black solid;
 }
@@ -86,13 +144,13 @@ body {
 }
 .image_button {
     text-align: center;
+    padding: 1rem 0;
 }
 .center_item {
     text-align: center;
 }
 
 .quiz_start_stat {
-    margin-top: 100px;
 }
 
   

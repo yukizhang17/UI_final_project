@@ -5,13 +5,13 @@
 {% block content %}
 <div class="section-home-page">
   <h1 class="text-center pt-4">{{item.section_name}}</h1>
-  <div class="text-center mt-5 pt-3">
+  <div class="text-center learn-start-button-wrapper">
     <a href="{{item.pages["1"].page_link}}" class="custom-btn btn-type-1">
       Learn from the Start
     </a>
   </div>
-  <h2 class="text-center font-weight-bold section-browse-header">Browse By Section</h2>
-  <div class="row w-100 text-center section-home-row pb-5">
+  <!-- <h2 class="text-center font-weight-bold section-browse-header">Browse By Section</h2> -->
+  <div class="row w-100 text-center section-home-row">
     {% for i, page in item.pages.items() %}
       {% if page.type != 'summary' and page.type != 'end' %}
         <div class="page-card" onclick="window.location.href='{{page.page_link}}'">
