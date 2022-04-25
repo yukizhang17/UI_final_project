@@ -6,7 +6,18 @@ nav {
   padding-bottom: 1rem;
 }
 
-nav h1 {
+.mobile-navbar {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+#logo {
   font-family: "Playfair Display", sans-serif;
   font-weight: 900;
   cursor: pointer;
@@ -27,7 +38,17 @@ nav h1 {
   nav {
     padding: 1.3rem 1rem;
     padding-bottom: 0.5rem;
+    transition: all 0.4s ease;
   }
+
+  .mobile-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    padding-bottom: 1rem;
+  }
+
   .actions {
     display: none;
   }
@@ -69,7 +90,10 @@ nav h1 {
   .nav-collapse.nav-open span::after {
     bottom: 0;
   }
-  nav.nav-open {
+
+  .mobile-navbar.nav-open {
+    opacity: 1;
+    pointer-events: all;
     z-index: 100;
     width: 100vw;
     height: 100vh;
@@ -78,15 +102,15 @@ nav h1 {
     flex-direction: column;
     justify-content: center;
   }
-  nav.nav-open h1 {
+  .mobile-navbar.nav-open h1 {
     margin-bottom: 2rem;;
   }
-  nav.nav-open .actions {
+  .mobile-navbar.nav-open .actions {
     display: initial;
     display: flex;
     flex-direction: column;
   }
-  nav.nav-open .actions > * {
+  .mobile-navbar.nav-open .actions > * {
     margin-bottom: 1rem;
   }
 }

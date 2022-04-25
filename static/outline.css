@@ -183,3 +183,20 @@ h1, h2, h3, h4, h5, h6, p {
     object-fit: contain;
   }
 }
+
+
+
+.drag-left {
+  transform: translateX(-100px);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.open-animation .drag-left {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: initial;
+  pointer-events: all; 
+}

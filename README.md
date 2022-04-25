@@ -6,14 +6,10 @@ We aim to teach people the basics of the subtle art of wine tasting. You can lea
 
 ## TODO
 
-1. **Responsiveness**: Currently only the navbar is responsive. We need to work on making the whole website responsive in the next iteration.
-2. **Graphic Design:** The Quiz section of the web app still doesn't fully adopt all the graphic design changes from the learning section. We aim to complete this in the next iteration.
-3. **Animations:** We will also add animations to the graphic design part of the website in the next iteration to make everything seem seamless.
-4. **Drag and Drop:** Not working on mobile sizes.
-5. **Radio buttons:** Clicking on images in the Quiz section should select the beneath.
-6. **Learn from Start:** Fix the button to the bottom of the page to ensure continuity.
-7. Code Structure Cleanup.
-8. Add a Favicon.
+1. **Responsiveness**: Most of the website is responsive now. We will work on the stuff that doesn''t work.
+2. **Animations:** We will also add animations to the graphic design part of the website in the next iteration to make everything seem seamless.
+3. **Drag and Drop:** Still not working on mobile sizes.
+4. Add a Favicon.
 
 ## CSS Structure
 

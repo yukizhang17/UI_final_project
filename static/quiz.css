@@ -34,6 +34,20 @@ body {
 #learn {
     float: right;
 }
+
+@media screen and (max-width: 768px) {
+    #question {
+        font-size: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+    #learn {
+        margin-top: 2rem;
+    }
+}
+
 /* General */
 .correct {
     background-color: #63a671 !important;
@@ -77,6 +91,11 @@ body {
 .quiz-row {
     justify-content: center;
     column-gap: 2rem;
+}
+@media screen and (max-width: 768px) {
+    .mcq_choice {
+        width: 100%;
+    }
 }
 /* Quiz type: mcq with side image */
 #mcq_side_image {
@@ -187,4 +206,10 @@ body {
 .quiz_start_stat {
 }
 
-  
+@media screen and (max-width: 768px) {
+    .image_choice_container {
+        display: flex;
+        padding: 1rem;
+        width: initial;
+    }
+}

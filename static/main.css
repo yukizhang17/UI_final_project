@@ -78,6 +78,9 @@
     #sections-page .wrapper .section h2 {
         font-size: 1.6rem;
     }
+    #sections-page.quiz-end .wrapper .section h2 {
+        font-size: 2.6rem;
+    }
     #sections-page .section {
         display: flex;
         flex-direction: column;
