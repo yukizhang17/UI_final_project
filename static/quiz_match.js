@@ -452,4 +452,14 @@ $(document).ready(function(){
         start_y = 0
         curr_canvas = null
       });
+
+      if (user_answer) {
+          $.each(user_answer, function(index, choice_idx){
+              let right = user_answer[choice_idx]
+              user_answer_left[choice_idx] = right
+              user_answer_right[right] = choice_idx
+          })
+          setUserAnswers()
+          $("#submit").click()
+      }
 });

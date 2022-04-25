@@ -175,4 +175,14 @@ $(document).ready(function(){
             onSubmitFail();
         }
     })
+
+    if (user_answer) {
+        $.each(Object.keys(user_answer), function(index, key){
+            user_choice.push(user_answer[key])
+        })
+        
+        make_choices(item["choices"])
+        init_user_answer(item["choices"])
+        $("#submit").click()
+    }
 })

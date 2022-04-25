@@ -14,6 +14,7 @@ app = Flask(__name__)
 #Takes the data from the tutorial_data.py and from quiz_data.py
 quiz_result = {}
 quiz_user_answer = {}
+answer_submitted = False
 
 @app.route('/')
 def home():
@@ -45,24 +46,31 @@ def learn(section_id='1', id='1'):
 
 @app.route('/quiz/<id>')
 def quiz(id='1'):
+  global quiz_user_answer
+  global answer_submitted
+  
+  user_answer = None
+  if answer_submitted:
+    user_answer = quiz_user_answer[id]
+    answer_submitted = False
+
   # Add more types of page if needed.
   if id == 'start':
     # Reset previously stored quiz data.
     global quiz_result 
     quiz_result = {}
-    global quiz_user_answer
     quiz_user_answer = {}
     return render_template('quiz/quiz_start.html', quiz_num=len(quiz_data))
   elif quiz_data[id]['type'] == 'mcq':
-    return render_template('quiz/quiz_mcq.html', item=quiz_data[id])
+    return render_template('quiz/quiz_mcq.html', item=quiz_data[id], user_answer=user_answer)
   elif quiz_data[id]['type'] == 'image_mcq':
-    return render_template('quiz/quiz_mcq_img.html', item=quiz_data[id])
+    return render_template('quiz/quiz_mcq_img.html', item=quiz_data[id], user_answer=user_answer)
   elif quiz_data[id]['type'] == 'mcq_with_side_image':
-    return render_template('quiz/quiz_mcq_with_side_image.html', item=quiz_data[id])
+    return render_template('quiz/quiz_mcq_with_side_image.html', item=quiz_data[id], user_answer=user_answer)
   elif quiz_data[id]['type'] == 'match':
-    return render_template('quiz/quiz_match.html', item=quiz_data[id])
+    return render_template('quiz/quiz_match.html', item=quiz_data[id], user_answer=user_answer)
   elif quiz_data[id]['type'] == 'drag':
-    return render_template('quiz/quiz_drag_drop.html', item=quiz_data[id])
+    return render_template('quiz/quiz_drag_drop.html', item=quiz_data[id], user_answer=user_answer)
 
 @app.route('/quiz/<quiz_id>/learn/section/<id>')
 def quiz_learn_section(quiz_id='1', id='1'):
@@ -145,6 +153,11 @@ def check_answer():
   print(isCorrect)
   return jsonify(correct = isCorrect, answer = answer, user_answer = user_answer)
 
+@app.route('/quiz/back/<id>', methods=['POST'])
+def quiz_back(id='1'):
+  global answer_submitted
+  answer_submitted = True
+  return jsonify({"id": id})
 
 if __name__ == '__main__':
   app.run(debug = True)

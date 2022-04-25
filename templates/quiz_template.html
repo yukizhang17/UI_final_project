@@ -4,6 +4,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_template.js') }}"></script>
     <script>
         let item = {{item|tojson}}
+        let user_answer = {{user_answer|tojson}}
     </script>
 
     <!-- Quiz template, which contains question, quiz progress, buttons to go to previous/next questions, and button to review -->

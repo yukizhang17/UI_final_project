@@ -126,9 +126,17 @@ function submit() {
     return true;
 }
 
+function returnState(user_answer) {
+    let button = $("#"+ user_answer)
+    button.prop({
+        checked: true
+    })
+    lockRadioButtons()
+    $("#submit").click()
+}
+
 $(document).ready(function(){
     let type = item["type"]
-    console.log(type)
     if (type == "mcq" || type == "mcq_with_side_image") {
         initialize_choices(item["choices"])
     }
@@ -148,4 +156,11 @@ $(document).ready(function(){
             onSubmitFail();
         }
     })
+
+    // Returning from learn page. We already have the user answer, so 
+    // set the user answer and respective feedback.
+    if (user_answer) {
+        console.log("Set answer")
+        returnState(user_answer)
+    }
 })
