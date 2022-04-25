@@ -23,10 +23,21 @@ def home():
 def learn_section_page():
   return render_template('learn/sections.html', item=tutorial_data)
 
-@app.route('/learn/section/<id>')
-def learn_section(id='1'):
+@app.route('/learn/section/1')
+def learn_section1(id='1'):
   print("Section Page Served. ID:", id, "Timestamp:", datetime.datetime.now().isoformat())
-  return render_template('learn/section_home.html', item=tutorial_data[id])
+  return render_template('learn/section_home1.html', item=tutorial_data['1'])
+
+@app.route('/learn/section/2')
+def learn_section2(id='1'):
+  print("Section Page Served. ID:", id, "Timestamp:", datetime.datetime.now().isoformat())
+  return render_template('learn/section_home2.html', item=tutorial_data['2'])
+
+@app.route('/learn/section/3')
+def learn_section3(id='1'):
+  print("Section Page Served. ID:", id, "Timestamp:", datetime.datetime.now().isoformat())
+  return render_template('learn/section_home3.html', item=tutorial_data['3'])
+
 
 @app.route('/learn/section/<section_id>/<id>')
 def learn(section_id='1', id='1'):
@@ -64,9 +75,17 @@ def quiz(id='1'):
   elif quiz_data[id]['type'] == 'drag':
     return render_template('quiz_drag_drop.html', item=quiz_data[id])
 
-@app.route('/quiz/<quiz_id>/learn/section/<id>')
-def quiz_learn_section(quiz_id='1', id='1'):
-  return render_template('quiz/learn/section_home.html', item=tutorial_data[id], quiz_id=quiz_id)
+@app.route('/quiz/<quiz_id>/learn/section/1')
+def quiz_learn_section1(quiz_id='1', id='1'):
+  return render_template('quiz/learn/section_home1.html', item=tutorial_data[1], quiz_id=quiz_id)
+
+@app.route('/quiz/<quiz_id>/learn/section/2')
+def quiz_learn_section2(quiz_id='1', id='1'):
+  return render_template('quiz/learn/section_home2.html', item=tutorial_data[2], quiz_id=quiz_id)
+
+@app.route('/quiz/<quiz_id>/learn/section/3')
+def quiz_learn_section3(quiz_id='1', id='1'):
+  return render_template('quiz/learn/section_home3.html', item=tutorial_data[3], quiz_id=quiz_id)
 
 @app.route('/quiz/<quiz_id>/learn/section/<section_id>/<id>')
 def quiz_learn(quiz_id='1', section_id='1', id='1'):
