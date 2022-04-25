@@ -11,6 +11,7 @@ function make_choices(choices) {
     $("#option_drag_item").empty()
     $.each(init_choices, function(index, choice_idx){
         let div = $("<div>")
+        div.prop('id', 'option_' + choice_idx)
         div.attr('data-name', choice_idx)
         div.addClass('drag_items')
         div.addClass('p-2')
@@ -65,7 +66,7 @@ function init_user_answer(choices) {
     })
 }
 
-function showFeedback(user_answer, correct) {
+function showFeedback(user_answer, correct, answer) {
     console.log(correct)
     $.each(Object.keys(correct), function(index, choice_idx){
         let feedback = "correct"
@@ -74,6 +75,19 @@ function showFeedback(user_answer, correct) {
         }
         $("#choice_" + (index+1).toString()).addClass(feedback)
     })
+    $.each(Object.keys(answer), function(index, choice_idx){
+        let idx = answer[choice_idx]
+        if (!user_choice.includes(idx)) {
+            $("#option_" + idx).addClass("correct")
+        }
+    })
+    for (let i = Object.keys(user_answer).length; i < Object.keys(answer).length; i++) {
+        let div = $("<div>")
+        div.addClass('dropped_items p-2 mx-2 incorrect')
+        div.text((i+1))
+
+        $("#answer_drop_box").append(div)
+    }
 }
 
 function submit(choices) {
@@ -100,7 +114,7 @@ function submit(choices) {
             let answer = result["answer"]
             let user_answer = result["user_answer"]
             // Show feedback for correct / incorrect answer.
-            showFeedback(user_answer, correct)
+            showFeedback(user_answer, correct, answer)
         },
         error: function(request, status, error){
             console.log("Error");
