@@ -1,10 +1,15 @@
 // TODO: Add a way to check progress (e.g. currently at 3rd question out of 7 ..)
 
 function onSubmit() {
+    $("#submit_feedback").empty()
     // Add Previous / Next / Learn buttons once submit is clicked.
     // This function should be called in submit() function for individual question types
     showActionButtons()
     setClickActions()
+}
+
+function onSubmitFail() {
+    $("#submit_feedback").html("Invalid / Incomplete answer.")
 }
 
 function setClickActions() {
@@ -40,6 +45,7 @@ function showActionButtons() {
 
 function showSubmitButton() {
     $("#quizactions").empty()
+    $("#submit_feedback").empty()
     
     let submitbutton = $("<div class='custom-btn btn-type-2 mx-2' id='submit'></div>")
     submitbutton.html("Submit")

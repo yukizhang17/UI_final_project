@@ -384,6 +384,8 @@ $(document).ready(function(){
             // onSubmit() function defined in quiz_template.js 
             // Removes submit button and adds next set of action buttons.
             onSubmit();
+        } else {
+            onSubmitFail();
         }
     })
 

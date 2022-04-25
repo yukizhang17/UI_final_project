@@ -8,6 +8,7 @@
 
     <!-- Quiz template, which contains question, quiz progress, buttons to go to previous/next questions, and button to review -->
     <div class="container container-full-height container-centered">
+        <!-- <div class="container-centered"> -->
         <h1 id="question" class="section">
             Q{{item.id}}. {{item.question}}
         </h1>
@@ -16,6 +17,8 @@
         {% endblock %}
         
         <div id="quizactions" class="section"></div>
+        <!-- </div> -->
+        <div id="submit_feedback"></div>
     </div>
 
 {% endblock %}

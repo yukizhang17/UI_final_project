@@ -43,6 +43,12 @@ body {
     background-color: #f8464c !important;
     color: #fff;
 }
+#submit_feedback {
+    text-align: center;
+    margin-top: -15px;
+    color: #f8464c;
+    height: 1rem;
+}
 /* Quiz type: mcq */
 .match_choice_label.correct, .match_choice_label.incorrect {
     color: #fff;
