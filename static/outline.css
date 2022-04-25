@@ -148,3 +148,38 @@ h1, h2, h3, h4, h5, h6, p {
   left: 50%;
   transform: translateX(-50%);
 }
+
+@media screen and (max-width: 768px) {
+  .custom-btn.btn-type-1 {
+    padding: 0.4rem 0.5rem; 
+  }
+  .section-wrapper {
+    flex-direction: column;
+    padding-bottom: 8rem;
+    height: inherit;
+  }
+  .section-wrapper .section {
+    width: 100%;
+  }
+  .section-wrapper .section.section-left {
+    padding: 0;
+    padding: 0 1.4rem;
+    order: 2;
+  }
+  .section-wrapper .section.section-left h2 {
+    font-size: 1.8rem;
+  }
+  .section-wrapper .section.section-left p {
+    font-size: 1.1rem;
+  }
+  .section-wrapper .section.section-right {
+    order: 1;
+    padding: 0 1rem;
+  }
+  .section-wrapper .section .section-image {
+    height: 350px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
