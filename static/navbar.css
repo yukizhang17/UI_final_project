@@ -15,6 +15,7 @@ nav {
   left: 0;
   overflow: hidden;
   transition: all 0.4s ease;
+  display: none;
 }
 
 #logo {
@@ -103,7 +104,7 @@ nav {
     justify-content: center;
   }
   .mobile-navbar.nav-open h1 {
-    margin-bottom: 2rem;;
+    margin-bottom: 2rem;
   }
   .mobile-navbar.nav-open .actions {
     display: initial;

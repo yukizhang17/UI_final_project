@@ -129,7 +129,9 @@ h1, h2, h3, h4, h5, h6, p {
   padding-right: 5rem;
   padding-left: 2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .section-wrapper .section .section-image {
@@ -137,6 +139,28 @@ h1, h2, h3, h4, h5, h6, p {
   height: auto;
   max-height: 90%;
   object-fit: cover;
+}
+
+.section-wrapper .section.section-left .foods span {
+  padding: 0 0.5rem;
+}
+
+.section-wrapper .section.section-left .foods .title {
+  padding: 0;
+  font-size: 1.4rem;
+}
+
+.section-wrapper .section.section-left .foods span.food-icon{
+  font-size: 1.5rem;
+}
+
+.section-wrapper .section.section-left .foods span.food-image img{
+  width: 2rem;
+  height: auto;
+}
+
+.section-wrapper .section.section-left .foods span.food-image {
+  font-size: 1.5rem;
 }
 
 .section-wrapper .section > * {
@@ -147,6 +171,24 @@ h1, h2, h3, h4, h5, h6, p {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media screen and (max-width: 1500px) {
+  .section-wrapper {
+    height: calc(100vh - 10rem);
+  }
+  .section-wrapper .section > * {
+    margin-top: 0.4rem;
+  }
+  .section-wrapper .section.section-left .foods .title {
+    font-size: 1.2rem;
+  }
+  .section-wrapper .section.section-left .foods span.food-image img{
+    width: 1.6rem;
+  }
+  .section-wrapper .section.section-left .foods span.food-image, .section-wrapper .section.section-left .foods span.food-icon {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 768px) {

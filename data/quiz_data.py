@@ -81,7 +81,7 @@ quiz_data = {
         "question": "Match food and type of wine that goes well together.",
         "choices_left": {
             "1": "Meat",
-            "2": "Pasta",
+            "2": "Pizza",
             "3": "Vegetarian"
         },
         "choices_right": {

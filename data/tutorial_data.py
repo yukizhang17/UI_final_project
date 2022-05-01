@@ -245,9 +245,15 @@ tutorial_data = {
         "heading": "Red Wine - Cabernet Sauvignon",
         "text": [
           "This is the most popular type of red wine in the world.",
-          "Cabernet Sauvignon is both a red wine grape and the wine made from that grape.",
           "These are generally full-bodied and tannic.",
-          "Goes well with: Any meat, especially if it's fatty."
+          # "Goes well with: Any meat, especially if it's fatty."
+        ],
+        "foods": [
+          {
+            "type": "fa",
+            "class": "fa-solid fa-drumstick-bite",
+            "text": "Any Meat",
+          }
         ],
         "image": "/static/img/learn/carbernet_sauvignon.jpeg",
         "alt": "Carbernet Sauvignon",
@@ -259,10 +265,26 @@ tutorial_data = {
         "type": "content-two-column",
         "heading": "Red Wine - Zinfandel",
         "text": [
-          "The taste of a Zinfandel can vary depending on where it's grown.",
-          "It's usually nice and juicy and high in alcohol content.",
-          "These are generally medium-bodied.",
-          "Goes with: Medium fatty foods like pizza, pasta or pork ribs."
+          "Zinfandel's are usually nice and juicy.",
+          "These are generally medium-bodied and high in alcohol content.",
+          # "Goes well with: Medium fatty foods like pizza, pasta or pork ribs."
+        ],
+        "foods": [
+          {
+            "type": "fa",
+            "class": "fa-solid fa-pizza-slice",
+            "text": "Pizza",
+          },
+          {
+            "type": "image",
+            "path": "/static/img/learn/pasta.png",
+            "text": "Pasta"
+          },
+          {
+            "type": "image",
+            "path": "/static/img/learn/pork_ribs.png",
+            "text": "Pork Ribs"
+          }
         ],
         "image": "/static/img/learn/zinfandel.jpeg",
         "alt": "Zinfandel",
@@ -274,9 +296,21 @@ tutorial_data = {
         "type": "content-two-column",
         "heading": "Red Wine - Pinot Noir",
         "text": [
-          "This wine is generally medium to light-bodied and feels silky to the tongue.",
-          "One might taste berries like raspberry or cranberry.",
-          "Goes well with: low-fat foods like sushi or salmon."
+          "This wine feels silky to the tongue.",
+          "This wine is generally medium to light-bodied and one might taste berries like raspberry or cranberry.",
+          # "Goes well with: low-fat foods like sushi or salmon."
+        ],
+        "foods": [
+          {
+            "type": "image",
+            "path": "/static/img/learn/sushi.png",
+            "text": "Sushi"
+          },
+          {
+            "type": "image",
+            "path": "/static/img/learn/salmon.png",
+            "text": "Salmon"
+          }
         ],
         "image": "/static/img/learn/pinot_noir.jpeg",
         "alt": "Pinot Noir",
@@ -290,7 +324,19 @@ tutorial_data = {
         "text": [
           "Chardonnay is one of the most complex and versatile grapes out there.",
           "Chardonnay is generally medium to full-bodied and ranges in flavor from apple and lemon to papaya and pineapple.",
-          "Goes well with: meaty fish (cod, halibut) and shellfish (prawns, lobster and crabs)"
+          # "Goes well with: meaty fish (cod, halibut) and shellfish (prawns, lobster and crabs)"
+        ],
+        "foods": [
+          {
+            "type": "image",
+            "path": "/static/img/learn/meaty_fish.png",
+            "text": "Meaty Fish"
+          },
+          {
+            "type": "image",
+            "path": "/static/img/learn/shellfish.png",
+            "text": "Shellfish"
+          }
         ],
         "image": "/static/img/learn/chardonnay.jpeg",
         "alt": "Chardonnay",
@@ -303,7 +349,20 @@ tutorial_data = {
         "heading": "White Wine - Sauvignon Blanc",
         "text": [
           "Sauvignon Blanc is packed with citrusy aromas and balanced with perfumed and acidic flavors.",
-          "Goes well with: 	white meat like chicken and lightly seasoned vegetarian dishes"
+          "This wine is medium to light-bodied and goes well with foods with lesser fat."
+          # "Goes well with: 	white meat like chicken and lightly seasoned vegetarian dishes"
+        ],
+        "foods": [
+          {
+            "type": "image",
+            "path": "/static/img/learn/chicken.png",
+            "text": "Chicken"
+          },
+          {
+            "type": "image",
+            "path": "/static/img/learn/vegetarian.png",
+            "text": "Vegetarian Dishes"
+          }
         ],
         "image": "/static/img/learn/sauvignon_blanc.jpeg",
         "alt": "Sauvignon Blanc",
@@ -315,9 +374,22 @@ tutorial_data = {
         "type": "content-two-column",
         "heading": "White Wine - Riesling",
         "text": [
-          "Riesling is an aromatic, perfumed and intense white wine.",
-          "It is a great option if one is looking for something with some sugar, to counterbalance any spice.",
-          "Goes well with: delicate fish and Asian-inspired dishes."
+          # "Riesling is an aromatic, perfumed and intense white wine.",
+          "Riesling is a great option if one is looking for something with some sugar, to counterbalance any spice.",
+          "It is generally light-bodied and is great consumed with low fat foods."
+          # "Goes well with: delicate fish and Asian-inspired dishes."
+        ],
+        "foods": [
+          {
+            "type": "image",
+            "path": "/static/img/learn/delicate_fish.png",
+            "text": "Delicate Fish"
+          },
+          {
+            "type": "image",
+            "path": "/static/img/learn/asian_food.png",
+            "text": "Asian-inspired food"
+          }
         ],
         "image": "/static/img/learn/riesling.jpeg",
         "alt": "Riesling",

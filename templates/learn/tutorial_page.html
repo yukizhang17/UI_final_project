@@ -23,6 +23,24 @@
       {{t}}
     </p>
     {% endfor %}
+    {% if 'foods' in item %}
+      <div class="foods">
+        <span class="title font-weight-bold">Goes well with:</span>
+      {% for food in item.foods %}
+        {% if food.type == 'fa' %}
+        <span class="food-icon">
+          <i class="{{food.class}}"></i>
+          {{food.text}}
+        </span>
+        {% elif food.type == 'image' %}
+        <span class="food-image">
+          <img src="{{food.path}}" alt="{{food.text}}">
+          {{food.text}}
+        </span>
+        {% endif %}
+      {% endfor %}
+      </div>
+    {% endif %}
     {% if "list" in item %}
     <ol>
       {% for i in item.list  %}

@@ -203,7 +203,10 @@ body {
     text-align: center;
 }
 
-.quiz_start_stat {
+@media screen and (max-width: 1500px) {
+    .image_button {
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
