@@ -35,6 +35,17 @@ body {
     float: right;
 }
 
+#feedback-container {
+    z-index: 10;
+    width: 100%;
+}
+
+#feedback {
+    color: #f8464c;
+    border: 1px solid #f8464c;
+    font-size: 1.2rem;
+}
+
 @media screen and (max-width: 768px) {
     #question {
         font-size: 1.6rem;
