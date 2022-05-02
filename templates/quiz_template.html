@@ -7,18 +7,24 @@
         let user_answer = {{user_answer|tojson}}
     </script>
 
+    <div id="feedback-container" class="position-absolute d-flex flex-column p-4 mx-auto">
+        <div id="feedback" class="toast ml-auto" type="alert" aria-live="assertive" aria-atomic="true" data-delay="1000">
+            <div class="toast-body">
+                Invalid / Incomplete answer.
+            </div>
+        </div>
+    </div>
+
     <!-- Quiz template, which contains question, quiz progress, buttons to go to previous/next questions, and button to review -->
     <div class="container container-full-height container-centered">
-        <!-- <div class="container-centered"> -->
         <h1 id="question" class="section">
             Q{{item.id}}. {{item.question}}
         </h1>
-        
+
         {% block quizcontent %}
         {% endblock %}
         
         <div id="quizactions" class="section"></div>
-        <!-- </div> -->
         <div id="submit_feedback"></div>
     </div>
 

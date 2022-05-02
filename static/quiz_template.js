@@ -9,7 +9,8 @@ function onSubmit() {
 }
 
 function onSubmitFail() {
-    $("#submit_feedback").html("Invalid / Incomplete answer.")
+    // $("#submit_feedback").html("Invalid / Incomplete answer.")
+    $(".toast").toast('show')
 }
 
 function setClickActions() {
