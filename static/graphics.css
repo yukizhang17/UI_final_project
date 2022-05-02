@@ -31,7 +31,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 10rem;
+  padding-top: 3rem;
   width: 100%;
 }
 
@@ -40,9 +40,10 @@ body {
   list-style: none;
   width: 90vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 3rem;
 }
 
 .links__list.home1 {
