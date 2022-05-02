@@ -6,10 +6,10 @@ We aim to teach people the basics of the subtle art of wine tasting. You can lea
 
 ## TODO
 
-1. **Responsiveness**: Most of the website is responsive now. We will work on the stuff that doesn''t work.
-2. **Animations:** We will also add animations to the graphic design part of the website in the next iteration to make everything seem seamless.
-3. **Drag and Drop:** Still not working on mobile sizes.
-4. Add a Favicon.
+1. **Section Home Page:**  Section 3 Home Page text overflow needs to be fixed. Need to also work on improving icon quality.
+2. **Responsiveness**: Most of the website is responsive now. We will work on the stuff that doesn't work.
+3. **Animations:** We will also add animations to the graphic design part of the website in the next iteration to make everything seem seamless.
+4. **Drag and Drop:** Still not working on mobile sizes.
 
 ## CSS Structure
 
