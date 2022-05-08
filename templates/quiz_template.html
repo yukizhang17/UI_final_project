@@ -18,7 +18,7 @@
     <!-- Quiz template, which contains question, quiz progress, buttons to go to previous/next questions, and button to review -->
     <div class="container container-full-height container-centered">
         <h1 id="question" class="section">
-            Q{{item.id}}. {{item.question}}
+            <div id="quiz_text">Q{{item.id}}. {{item.question}}</div>
         </h1>
 
         {% block quizcontent %}

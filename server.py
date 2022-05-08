@@ -30,12 +30,12 @@ def learn_section1(id='1'):
   return render_template('learn/section_home1.html', item=tutorial_data['1'])
 
 @app.route('/learn/section/2')
-def learn_section2(id='1'):
+def learn_section2(id='2'):
   print("Section Page Served. ID:", id, "Timestamp:", datetime.datetime.now().isoformat())
   return render_template('learn/section_home2.html', item=tutorial_data['2'])
 
 @app.route('/learn/section/3')
-def learn_section3(id='1'):
+def learn_section3(id='3'):
   print("Section Page Served. ID:", id, "Timestamp:", datetime.datetime.now().isoformat())
   return render_template('learn/section_home3.html', item=tutorial_data['3'])
 
@@ -60,7 +60,7 @@ def quiz(id='1'):
   global answer_submitted
   
   user_answer = None
-  if answer_submitted:
+  if answer_submitted and (id in quiz_user_answer.keys()):
     user_answer = quiz_user_answer[id]
     answer_submitted = False
 
@@ -84,15 +84,15 @@ def quiz(id='1'):
 
 @app.route('/quiz/<quiz_id>/learn/section/1')
 def quiz_learn_section1(quiz_id='1', id='1'):
-  return render_template('quiz/learn/section_home1.html', item=tutorial_data[1], quiz_id=quiz_id)
+  return render_template('learn/section_home1.html', item=tutorial_data['1'], quiz_id=quiz_id)
 
 @app.route('/quiz/<quiz_id>/learn/section/2')
 def quiz_learn_section2(quiz_id='1', id='1'):
-  return render_template('quiz/learn/section_home2.html', item=tutorial_data[2], quiz_id=quiz_id)
+  return render_template('learn/section_home2.html', item=tutorial_data['2'], quiz_id=quiz_id)
 
 @app.route('/quiz/<quiz_id>/learn/section/3')
 def quiz_learn_section3(quiz_id='1', id='1'):
-  return render_template('quiz/learn/section_home3.html', item=tutorial_data[3], quiz_id=quiz_id)
+  return render_template('learn/section_home3.html', item=tutorial_data['3'], quiz_id=quiz_id)
 
 @app.route('/quiz/<quiz_id>/learn/section/<section_id>/<id>')
 def quiz_learn(quiz_id='1', section_id='1', id='1'):
