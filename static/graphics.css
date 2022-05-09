@@ -33,6 +33,7 @@ body {
   align-items: flex-start;
   padding-top: 3rem;
   width: 100%;
+  padding-bottom: 100px;
 }
 
 .links__list {
@@ -113,11 +114,12 @@ body {
   width: 100%;
   left: 0;
   text-align: center;
-  height: calc(var(--base-grid)*2);
-  font-size: calc(var(--base-grid)*2);
+  height: calc(var(--base-grid)*1.8);
+  font-size: calc(var(--base-grid)*1.5);
   /*display: none;*/
   bottom: calc(var(--base-grid)*8.5);
   animation: text .3s ease-in-out forwards;
+  padding-top: 0.3rem;
 }
 
 .links__text2 {
