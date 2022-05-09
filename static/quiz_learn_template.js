@@ -7,6 +7,11 @@ function update_hrefs() {
     $(".page-card").click(function(e){
         window.location.replace("/quiz/" + quiz_id + this.dataset.link)
     })
+    let icons = document.getElementsByClassName('links__link')
+    $.each(icons, function(index, icon){
+        // console.log(icon.getAttribute("href"))
+        icon.setAttribute("href", "/quiz/" + quiz_id + icon.getAttribute("href"))
+    })
 }
 
 function back() {
